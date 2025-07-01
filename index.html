@@ -12,57 +12,95 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-                <style>
-    body {
-  font-family: "Roboto Condensed", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
+               <style>
+  body {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+  }
 
-    .header {
-      text-align: center;
-      font-size: 1.4em;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin-bottom: 30px;
-    }
-    h1 {
-  font-weight: 900;
-  font-size: clamp(3 em, 6vw, 5em); /* адаптивный размер */
-  line-height: 1;
-  letter-spacing: -1px;
-  color: #222;
-  margin-bottom: 20px;
-  text-align: center;
-}
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-      border-radius: 8px;
-    }
-    p {
-      margin-bottom: 20px;
-      font-size: 1.5em;
-    }
-    .social-links a {
-      margin-right: 20px;
-      text-decoration: none;
-      color: #1a0dab;
-      font-weight: 600;
-    }
-    .social-links a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 1em;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0 40px;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: clamp(2em, 6vw, 4em);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: #111;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  h1 + p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 30px 0;
+    border-radius: 8px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+  }
+
+  ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+  }
+
+  .social-links {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #1a0dab;
+    font-weight: 500;
+  }
+
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+</style>
+
 </head>
 <body>
-
+<div class="container">
   <div class="header">Grindstone blog</div>
   <hr />
 
@@ -81,7 +119,7 @@
 
 <p>Все думают, что похудение — это изнурительные тренировки до полусмерти и диеты на одном огурце. <strong>Нет!</strong> Жир уходит <strong>не от 1000 бёрпи, а от дефицита калорий</strong>.</p>
 
-<p><strong>ТЫ ДОЛЖЕН ТРАТИТЬ ЭНЕРГИИ БОЛЬШЕ — ЧЕМ ПОЛУЧАЕШЬ С ЕДОЙ. ВСЁ, НИКАКОЙ МАГИИ.</strong></p>
+<p><strong>Ты должен тратить энергии бодьше — чем получаешь с едой. Всё, никакой магии.</strong></p>
 
 <p>Диета — это не "не есть", а <strong>рациональный подход</strong>: что ты будешь есть. Меньше жирного, больше углеводов и белка.</p>
 
@@ -125,6 +163,7 @@
     <a href="https://t.me/yourtelegram" target="_blank" rel="noopener noreferrer">Телеграм</a>
     <a href="https://instagram.com/yourinstagram" target="_blank" rel="noopener noreferrer">Инстаграм</a>
   </div>
+    </div>
 
 </body>
 </html>

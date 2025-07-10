@@ -1,162 +1,175 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grindstone Demo</title>
-  <link rel="icon" href="logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Секреты быстрого похудения</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* Сброс и базовые стили */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  header {
+    padding: 40px 20px 20px;
+    text-align: center;
+  }
+  header h1 {
+    font-weight: 900;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin: 0 0 10px;
+    line-height: 1.1;
+  }
+  header p {
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #555;
+    margin: 0 0 30px;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #1e90ff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary:hover {
+    background: #0069d9;
+  }
+  section {
+    margin-bottom: 60px;
+  }
+  section h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+  }
+  section p, section ul {
+    font-size: 1.125rem;
+    color: #333;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  ul li {
+    margin-bottom: 12px;
+  }
+  img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #eee;
+    color: #888;
+    font-size: 0.9rem;
+  }
+  .social-links {
+    margin-top: 20px;
+  }
+  .social-links a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #555;
+    transition: color 0.3s;
+  }
+  .social-links a:hover {
+    color: #1e90ff;
+  }
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto Condensed', sans-serif;
-      background: #fff;
-      color: #222;
-      line-height: 1.6;
+  /* Адаптив */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2.5rem;
     }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    .header {
+    .btn-primary {
+      width: 100%;
       text-align: center;
-      color: #888;
-      margin-bottom: 10px;
+      padding: 15px 0;
     }
-
-    hr {
-      border: none;
-      border-top: 1px solid #eee;
-      margin: 20px 0 40px;
-    }
-
-    h1 {
-      font-weight: 900;
-      font-size: clamp(2em, 6vw, 4em);
-      line-height: 1.1;
-      color: #111;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    h1 + p {
-      text-align: center;
-      font-size: 1.1em;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-
-    p {
-      margin-bottom: 20px;
-      font-size: 1.1em;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-bottom: 30px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-      font-size: 1.05em;
-    }
-
-    .social-links {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .social-links a {
-      display: inline-block;
-      margin: 0 15px;
-      font-size: 1.2em;
-      color: #555;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .social-links a:hover {
-      color: #000;
-    }
-
-    .social-links i {
-      margin-right: 8px;
-      font-size: 1.4em;
-      vertical-align: middle;
-    }
-  </style>
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-
 <body>
-  <div class="container">
-    <div class="header">Grindstone blog</div>
-    <hr />
 
-    <h1>вся правда о похудении</h1>
-    <p>или почему жир всегда побеждает</p>
+<header class="container">
+  <h1>Вся правда о похудении</h1>
+  <p>Или почему жир всегда побеждает</p>
+  <a href="#contact" class="btn-primary">Записаться на консультацию</a>
+</header>
 
-    <!-- Главное фото -->
-    <img src="photo_2025-07-01_16-05-06.jpg" alt="Похудение" />
+<main class="container">
 
-    <p>Если ты сейчас ждёшь очередной "волшебный" способ похудеть за 7 дней... и т. д.</p>
+  <section>
+    <h2>Как это работает</h2>
+    <p>Если ты сейчас ждёшь очередной "волшебный" способ похудеть за 7 дней к свадьбе бывшего, или хочешь сжечь жир, лежа в постели, листая REELS — остановись!</p>
+    <p>Я расскажу, как это работает на самом деле, без пыли в глаза и с гарантированным результатом — только надо делать, а не надеяться.</p>
+    <p>Жир уходит не от 1000 бёрпи, а от дефицита калорий. Ты должен тратить энергии больше — чем получаешь с едой. Всё, никакой магии.</p>
+  </section>
 
-    <p>Все думают, что похудение — это изнурительные тренировки... <strong>Нет!</strong></p>
-
-    <p>Диета — это не "не есть", а <strong>рациональный подход</strong>...</p>
-
-    <p><strong>Почему мы жрём ночью и срываемся с диет?</strong>...</p>
-
-    <p><strong>Силовые тренировки — лучший жиросжигатель...</strong></p>
-
+  <section>
+    <h2>Что делать дальше</h2>
     <ul>
-      <li>Состояние опорно-двигательного аппарата</li>
-      <li>Расход энергии за счёт окисления жиров</li>
-      <li>Снижает риск диабета и т. д.</li>
-    </ul>
-
-    <p><strong>Что делать дальше?</strong></p>
-    <ul>
-      <li>Не усложняй. Ешь одно и то же.</li>
+      <li>Не усложняй. Ешь одно и то же. Считай примерное количество калорий (БЖУ) или ориентируйся на лёгкое чувство голода.</li>
       <li>Будь честен с собой!</li>
-      <li>Думай на дистанции.</li>
+      <li>Думай на дистанции. Хочешь похудеть к отпуску? Окей. Но лучше — на всю жизнь. Без строгих диет, с едой, которую любишь.</li>
       <li>Силовые тренировки 3–4 раза в неделю.</li>
     </ul>
+  </section>
 
-    <p>Представь, как изменится твоя жизнь, когда уйдут лишние килограммы</p>
-
-    <!-- Фото отзывов / результатов -->
-    <img src="IMG_4824.jpeg" alt="Комментарий клиента" />
-    <img src="IMG_4826.jpeg" alt="Результат до/после 1" />
-    <p>Такие результаты получают мои подопечные...</p>
+  <section>
+    <h2>Результаты</h2>
+    <img src="IMG_4824.jpeg" alt="Комментарий" />
+    <img src="IMG_4826.jpeg" alt="Результат 1" />
+    <p>Такие результаты получают мои подопечные — без строгих диет и изнурительных тренировок.</p>
     <img src="IMG_4825.jpeg" alt="Результат 2" />
     <img src="IMG_4822.jpeg" alt="Результат 3" />
     <img src="IMG_4823.jpeg" alt="Результат 4" />
+  </section>
 
-    <p style="text-align: center;">
-      Пиши в директ, записывайся на подарочную консультацию...
-    </p>
-
+  <section id="contact" style="text-align:center;">
+    <p>Пиши в директ, записывайся на подарочную консультацию, разберем твою ситуацию и подберем подробный план действий ⤵️</p>
     <div class="social-links">
-      <a href="https://t.me/grindstone_channel" target="_blank">
-        <i class="fab fa-telegram-plane"></i> Telegram
-      </a>
-      <a href="https://instagram.com/grindstone101" target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
+      <a href="https://t.me/grindstone_channel" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://instagram.com/grindstone101" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
     </div>
-  </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 Владимир Иванов
+</footer>
+
 </body>
 </html>

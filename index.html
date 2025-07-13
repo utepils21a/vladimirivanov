@@ -35,6 +35,7 @@
       max-width: 1160px;
       margin: 0 auto;
       padding: 22px 28px 0 28px;
+      transition: all 0.22s;
     }
     .logo-name {
       display: flex;
@@ -179,51 +180,105 @@
       transform: translateY(-2px) scale(1.03);
     }
     .hero-photo {
-      flex: 0 0 330px;
-      max-width: 330px;
+      flex: 0 0 400px;
+      max-width: 480px;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .hero-photo img {
       width: 100%;
-      max-width: 340px;
-      border-radius: 22px;
+      max-width: 480px;
+      min-width: 180px;
+      min-height: 220px;
+      border-radius: 20px;
       object-fit: cover;
       box-shadow: 0 8px 44px #0007, 0 2px 12px #ff900018;
       background: #191919;
     }
+
+    /* --- АДАПТИВ --- */
     @media (max-width: 1000px) {
       .hero-row { flex-direction: column-reverse; align-items:center; gap:32px; }
-      .hero-photo { max-width:230px; margin:0 auto;}
+      .hero-photo { max-width:370px; }
       .hero-content { text-align:center; align-items:center; }
     }
-    @media (max-width: 690px) {
-      .header, .hero-row {
-        max-width: 99vw;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+    @media (max-width: 750px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 0 0 0;
+        gap: 8px;
       }
-      .hero-content { min-width: unset;}
-      .nav { gap: 12px;}
-      .social-links { gap: 18px;}
-      .footer-telegram, .footer-instagram { width:38px;height:38px;}
-      .footer-telegram img, .footer-instagram img { width:22px;height:22px;}
+      .logo-name {
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      .nav {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+      }
+      .tg-icon-link {
+        margin-left: 0;
+        margin-top: 8px;
+      }
+      .hero-row { padding: 22px 2vw 12px 2vw; }
+      .hero-photo { max-width: 99vw; }
+      .hero-photo img { max-width: 99vw; min-width: 60vw; }
+    }
+    @media (max-width: 650px) {
+      .hero-photo {
+        max-width: 98vw;
+        width: 100%;
+        justify-content: center;
+      }
+      .hero-photo img {
+        max-width: 98vw;
+        min-width: 60vw;
+        min-height: 180px;
+        border-radius: 18px;
+      }
+    }
+    @media (max-width: 550px) {
+      .cta-btn {
+        font-size: 1.25em;
+        padding: 22px 0;
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto 14px auto;
+        display: block;
+      }
+      .social-links {
+        gap: 18px;
+      }
+      .footer-telegram,
+      .footer-instagram {
+        width: 54px;
+        height: 54px;
+      }
+      .footer-telegram img,
+      .footer-instagram img {
+        width: 38px;
+        height: 38px;
+      }
     }
     @media (max-width: 480px) {
-      .hero-row { padding: 28px 0 8px 0;}
-      .hero-photo { max-width:160px;}
-      .cta-btn { font-size:1em;padding:10px 16px;}
+      .hero-row { padding: 10px 0 2px 0;}
+      .hero-photo { max-width:98vw;}
+      .cta-btn { font-size:1.08em; }
       .logo-name span { font-size: 1em;}
-      .footer-telegram, .footer-instagram { width:32px;height:32px;}
-      .footer-telegram img, .footer-instagram img { width:16px;height:16px;}
+      .footer-telegram, .footer-instagram { width:40px;height:40px;}
+      .footer-telegram img, .footer-instagram img { width:26px;height:26px;}
     }
 
-    /* ABOUT */
+    /* ABOUT — светлая подложка */
     .about {
+      background: #262626 !important;
+      color: #f7f7f7;
       max-width: 740px;
       margin: 52px auto 38px auto;
-      background: var(--bg-card);
       padding: 36px 26px 28px 26px;
       border-radius: 20px;
       box-shadow: 0 4px 32px #0003;
@@ -284,15 +339,15 @@
       border: 1.5px solid var(--border);
     }
     .gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px 12px 0 0;
-  object-fit: contain;
-  background: #181818;
-  max-height: none;
-  min-height: 0;
-}
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px 12px 0 0;
+      object-fit: contain;
+      background: #181818;
+      max-height: none;
+      min-height: 0;
+    }
     .caption {
       padding: 10px 8px 12px 8px;
       font-size: .99em;

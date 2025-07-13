@@ -362,14 +362,12 @@
         justify-content: center;
         display: none; /* скрыть стандартную на мобилке */
       }
-      .header-mobile-row {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        gap: 16px;
-        margin-bottom: 0;
-      }
+      .header-mobile-row { display: none; }
+@media (max-width: 700px) {
+  .header > .logo-name { display: none !important; }
+  .header-mobile-row { display: flex !important; }
+  .desktop-tg { display: none !important; }
+}
       .header > .logo-name { display: none !important; }
       .tg-icon-link {
         margin-left: 0;
@@ -430,25 +428,23 @@
   <div class="header">
   <!-- Лого для десктопа -->
   <a href="/" class="logo-name">Владимир Иванов</a>
-
-  <!-- Мобильная шапка: имя + Telegram одной строкой, только для мобилы -->
+  <!-- Мобильная шапка: имя + Telegram одной строкой -->
   <div class="header-mobile-row">
     <span class="logo-name" style="display:flex;">Владимир Иванов</span>
     <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
       <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
     </a>
   </div>
-
   <nav class="nav">
     <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
     <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
     <a class="nav-link" href="/blog">Блог</a>
-    <!-- Иконка Telegram справа в меню (только на десктопе, через CSS) -->
     <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link desktop-tg" title="Мой Telegram" rel="noopener">
       <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
     </a>
   </nav>
 </div>
+
 
 
   <!-- ОРАНЖЕВАЯ ЧЕРТА -->

@@ -162,6 +162,7 @@
       white-space: nowrap;
       width: 100%;
       letter-spacing: 0.03em;
+      text-align: left;
     }
     .hero-sub {
       font-size: 1.13em;
@@ -173,6 +174,7 @@
       align-self: flex-end;
       white-space: nowrap;
       font-size: 1.13em;
+      text-align: left;
     }
     .hero-content > .hero-title-row + * { margin-top: 26px !important; }
     .hero-motivation {
@@ -377,7 +379,7 @@
         gap: 12px;
       }
       .header-mobile-row .logo-name {
-        font-size: 1.5em;
+        font-size: 1.2em;
         margin: 0;
         color: #fff;
         font-weight: 900;
@@ -389,31 +391,32 @@
       }
       .header-mobile-row .tg-icon-link {
         margin-left: 10px;
-        width: 44px;
-        height: 44px;
+        width: 38px;
+        height: 38px;
       }
       .header-mobile-row .tg-icon-link img {
-        width: 32px;
-        height: 32px;
+        width: 26px;
+        height: 26px;
       }
       .header-mobile-nav {
         display: flex !important;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 18px;
+        gap: 9px;
         margin: 8px 0 0 0;
         width: 100%;
       }
       .header-mobile-nav .nav-link {
         color: var(--muted);
-        font-size: 1.06em;
+        font-size: 0.95em;
         font-weight: 700;
-        padding: 2px 8px;
+        padding: 2px 6px;
         border-radius: 4px;
         background: none;
         border: none;
         text-decoration: none;
+        white-space: nowrap;
       }
       .header-mobile-nav .nav-link:active,
       .header-mobile-nav .nav-link:hover {
@@ -442,36 +445,39 @@
       .hero-photo { max-width: 98vw; }
       .hero-photo img { max-width: 98vw; }
       .hero-content {
-        text-align: left;
-        align-items: flex-start;
+        text-align: center;
+        align-items: center;
         width: 100%;
       }
       .hero-title-row {
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
         margin-bottom: 0;
       }
       .hero-title {
         white-space: normal;
-        font-size: 2.2em;
+        font-size: 2.3em;
         width: 100%;
-        line-height: 1.1;
-        margin-bottom: 0;
+        line-height: 1.09;
+        margin-bottom: 2px;
         letter-spacing: 0;
+        text-align: center;
       }
       .hero-sub {
         white-space: normal;
         font-size: 1em;
-        margin-bottom: 18px;
+        margin-bottom: 20px;
         color: #bbb;
-        align-self: flex-start;
+        align-self: center;
+        text-align: center;
       }
       .hero-content > .hero-title-row + * { margin-top: 18px !important; }
     }
     @media (max-width: 500px) {
-      .hero-title { font-size: 1.5em; }
-      .hero-sub { font-size: 0.92em; }
-      .header-mobile-row .logo-name { font-size: 1.05em;}
+      .hero-title { font-size: 1.32em; }
+      .hero-sub { font-size: 0.89em; }
+      .header-mobile-row .logo-name { font-size: 1em;}
+      .header-mobile-nav .nav-link { font-size: 0.87em;}
     }
   </style>
 </head>

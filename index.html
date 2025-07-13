@@ -462,12 +462,9 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  justify-content: flex-start;
-  gap: 18px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
+  gap: 18px;              /* Расстояние МЕЖДУ строками (уменьшить для компактности) */
+  margin-bottom: 0;       /* Убрать отступ после блока */
   width: 100%;
-  position: relative;
 }
 
 .hero-title {
@@ -477,33 +474,42 @@
   line-height: 1.08;
   white-space: nowrap;
   flex-shrink: 0;
+  margin-bottom: 0;       /* Убрать лишний отступ снизу */
 }
 
 .hero-sub {
   font-size: 1.13em;
-  color: #fff;
+  color: #bbb;
   font-weight: 400;
-  opacity: .84;
+  opacity: .95;
   white-space: nowrap;
   align-self: flex-end;
-  margin-bottom: 7px;
-  margin-left: auto;
-  /* прижимает к правому краю hero-content, но не за пределы фото */
+  margin-bottom: 6px;    /* Выровнять по низу первой строки */
+  margin-left: 22px;     /* Можно увеличить/уменьшить для точности */
+  margin-top: 0;
+}
+
+/* Добавь отступ ПЕРЕД следующим текстом (т.е. после hero-header-flex) */
+.hero-content > .hero-header-flex + * {
+  margin-top: 32px !important; /* Сделает больше пространства между заголовками и текстом */
 }
 
 @media (max-width: 950px) {
   .hero-header-flex {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2px;
-    margin-bottom: 8px;
+    gap: 1px;
   }
   .hero-title, .hero-sub {
     white-space: normal;
     margin-left: 0;
     text-align: left;
   }
+  .hero-content > .hero-header-flex + * {
+    margin-top: 22px !important;
+  }
 }
+
   </style>
 </head>
 <body>

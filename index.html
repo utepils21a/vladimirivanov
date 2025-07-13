@@ -121,8 +121,6 @@
       margin: 28px 0 0 0;
       box-sizing: border-box;
     }
-
-    /* --- HERO --- */
     .hero-row {
       display: flex;
       justify-content: space-between;
@@ -144,7 +142,6 @@
       text-align: left;
       align-items: flex-start;
     }
-    /* Оформляем заголовок и подпись в одну строку с подписью справа снизу */
     .hero-header-flex {
       display: flex;
       flex-direction: row;
@@ -239,8 +236,6 @@
       box-shadow: 0 8px 44px #0007, 0 2px 12px #ff900018;
       background: #191919;
     }
-
-    /* Мобильная версия шапки */
     .header-mobile-row {
       display: none;
       flex-direction: row;
@@ -266,8 +261,6 @@
       margin-bottom: 2px;
       width: 100vw;
     }
-
-    /* --- Мобилка --- */
     @media (max-width: 700px) {
       .header {
         display: none;
@@ -291,7 +284,6 @@
         align-items: center;
         padding: 0 2vw;
       }
-      /* Блок заголовка: вертикально, крупно и строго по центру */
       .hero-header-flex {
         flex-direction: column;
         align-items: center;
@@ -300,7 +292,7 @@
         width: 100%;
       }
       .hero-title {
-        font-size: 2.5em;
+        font-size: 2.6em;
         line-height: 1.1;
         text-align: center;
         width: 100vw;
@@ -311,7 +303,7 @@
         text-overflow: ellipsis;
       }
       .hero-sub {
-        font-size: 1.13em;
+        font-size: 1.12em;
         margin-bottom: 16px;
         color: #bbb;
         align-self: center;
@@ -325,13 +317,11 @@
     }
     @media (max-width: 460px) {
       .hero-title {
-        font-size: 1.34em;
+        font-size: 1.37em;
       }
       .hero-content { padding: 0 2vw; }
       .header-mobile-links { font-size: 0.88em; gap: 2vw; }
     }
-
-    /* --- Остальное не трогаем --- */
     .about, .gallery-item { background: var(--bg-card) !important; color: #fffbe6; }
     .about { max-width: 740px; margin: 52px auto 38px auto; padding: 36px 26px 28px 26px; border-radius: 20px; box-shadow: 0 4px 32px #0003; font-size: 1.09em; line-height: 1.69; }
     .about strong, .about b { color: var(--accent); font-weight: 800; }
@@ -386,7 +376,6 @@
   <!-- HERO -->
   <section class="hero-row">
     <div class="hero-content">
-      <!-- Веб: строка + подпись справа, Мобилка: обе по центру друг под другом -->
       <div class="hero-header-flex">
         <div class="hero-title">вся правда о похудении</div>
         <div class="hero-sub">или почему жир всегда побеждает</div>
@@ -402,12 +391,61 @@
 
   <!-- ABOUT BLOCK -->
   <section class="about" id="about">
-    <!-- ... твой текст ... -->
+    <p>Если ты сейчас ждёшь очередной "волшебный" способ похудеть за 7 дней к свадьбе бывшего, или хочешь сжечь жир, лежа в постели листая REELS — остановись!</p>
+    <p>Вы не одни такие. Все мы попадались на удочку "планок до 7 пота" и "голодных марафонов".</p>
+    <p>Я расскажу, как это работает на самом деле, <strong>без пыли в глаза и с гарантированным результатом</strong> — только, конечно, надо <strong>делать</strong>, а не надеяться.</p>
+    <p>Все думают, что похудение — это изнурительные тренировки до полусмерти и диеты на одном огурце. <strong>Нет!</strong> Жир уходит <strong>не от 1000 бёрпи, а от дефицита калорий</strong>.</p>
+    <p><strong>Ты должен тратить энергии больше — чем получаешь с едой. Всё, никакой магии.</strong></p>
+    <p>Диета — это не "не есть", а <strong>рациональный подход</strong>: что ты будешь есть. Меньше жирного, больше углеводов и белка.</p>
+    <p><strong>Почему мы жрём ночью и срываемся с диет?</strong><br>Нет, ты не слабовольный. <strong>У нас так работает мозг.</strong> Когда ты мучаешь себя тренировками или голодом, твоя психика включает режим защиты — и в итоге ты жрёшь, куришь и листаешь рилсы одновременно, потому что мозг требует компенсацию.</p>
+    <p>Это называется <strong>REWARD SYSTEM</strong> — и она <strong>сильнее, чем твой список целей на год</strong>.</p>
+    <p><strong>Не борись с собой.</strong> Настраивай свою систему так, чтобы получать удовольствие от новых привычек: силовые тренировки, вкусная и менее калорийная еда, ощущение контроля — <strong>это работает</strong>.</p>
+    <p><strong>Силовые тренировки — лучший жиросжигатель, о котором ты не знал!</strong><br>Забудь про бег на дорожке, как способ похудеть. Это как кричать на холодильник, чтоб перестал кормить тебя ночью.</p>
+    <p><strong>МЫШЦЫ — это эндокринный орган</strong>, который влияет на кучу аспектов здоровья:</p>
+    <ul>
+      <li>Состояние опорно-двигательного аппарата</li>
+      <li>Расход энергии за счёт окисления жиров</li>
+      <li>Снижает риск диабета 2 степени и жировой болезни печени</li>
+      <li>Улучшает сердечно-сосудистую систему (80% смертей тут)</li>
+      <li>Увеличивает минеральную плотность костей</li>
+      <li>Повышает жёсткость и массу сухожилий</li>
+      <li>Снижает возрастные потери силы и мышечной массы</li>
+      <li>Уменьшает симптомы депрессии и тревоги, повышает качество сна и работоспособность</li>
+    </ul>
+    <p><strong>Что делать дальше? (если не хочется сорваться снова)</strong></p>
+    <ul>
+      <li>Не усложняй. Ешь одно и то же. Считай примерное количество калорий (БЖУ) или ориентируйся на лёгкое чувство голода.</li>
+      <li>Будь честен с собой!</li>
+      <li>Думай на дистанции. Хочешь похудеть к отпуску? Окей. Но лучше — <strong>на всю жизнь</strong>. Без строгих диет, с едой, которую любишь.</li>
+      <li>Силовые тренировки 3–4 раза в неделю.</li>
+    </ul>
+    <p>Представь, как изменится твоя жизнь, когда из неё уйдут лишние килограммы</p>
+    <img src="IMG_4824.jpeg" alt="Результат 1" />
+    <img src="IMG_4826.jpeg" alt="Результат 2" />
   </section>
   <!-- GALLERY BLOCK / ОТЗЫВЫ -->
   <div class="gallery-title" id="gallery">Результаты и отзывы</div>
   <section class="gallery">
-    <!-- ... отзывы ... -->
+    <div class="gallery-item">
+      <img src="demo/photo_2025-07-13_11-14-12.jpg" alt="Результат 3">
+      <div class="caption">-8 кг за 3 месяца</div>
+      <div class="caption">Без ограничений по питанию, без кардио и интенсивных тренировок</div>
+    </div>
+    <div class="gallery-item">
+      <img src="demo/photo_2025-07-13_11-26-49.jpg" alt="Результат 4" />
+      <img src="demo/photo_2025-07-13_11-26-49 (2).jpg" alt="Результат 4.1" />
+      <div class="caption">Результат за 4 недели</div>
+    </div>
+    <div class="gallery-item">
+      <img src="demo/photo_2025-07-13_11-26-51.jpg" alt="Результат 5" />
+      <img src="demo/photo_2025-07-13_11-26-52.jpg" alt="Результат 5.1" />
+      <div class="caption">Результат за 2 месяца</div>
+    </div>
+    <div class="gallery-item">
+      <img src="demo/photo_2025-07-13_11-26-48.jpg" alt="Результат 6 " />
+      <div class="caption">-11 кг за 3 месяца</div>
+      <div class="caption">Пришла ко мне с весом 83кг и обхватом талии 109см. Скинули более 11кг, минус 15см в талии</div>
+    </div>
   </section>
   <!-- CTA BLOCK -->
   <section class="cta-block">

@@ -140,14 +140,51 @@
   justify-content: center;
   position: relative;
 }
-    .hero-header-flex {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-      gap: 18px;
-      margin-bottom: 2px;
-      width: 100%;
-    }
+    .hero-title-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.hero-title {
+  font-size: clamp(2.2em, 5vw, 3.5em);
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1.08;
+  margin-bottom: 0;
+  text-shadow: 0 4px 20px #ff900028;
+  white-space: nowrap; /* В одну строку! */
+}
+
+.hero-sub {
+  font-size: 1.13em;
+  color: #bbb;
+  font-weight: 400;
+  opacity: .95;
+  margin-top: 2px;
+  margin-bottom: 28px; /* больше расстояние после второй строки */
+  align-self: flex-end;  /* Прижать к правому краю блока hero-title-row */
+  white-space: nowrap;
+}
+
+/* Добавить больше отступа после .hero-title-row */
+.hero-content > .hero-title-row + * {
+  margin-top: 26px !important;
+}
+
+/* На мобильных - все выравниваем влево и разрешаем переносы */
+@media (max-width: 700px) {
+  .hero-title-row, .hero-content {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .hero-title, .hero-sub {
+    white-space: normal !important;
+    font-size: 2em !important;
+  }
+}
+
    .hero-title {
   font-size: clamp(2.2em, 5vw, 3.5em);
   font-weight: 900;
@@ -431,10 +468,12 @@
   <div class="orange-divider"></div>
 
   <!-- HERO -->
-  <section class="hero-row">
+ <section class="hero-row">
   <div class="hero-content">
-    <div class="hero-title">вся правда о похудении</div>
-    <div class="hero-sub">или почему жир всегда побеждает</div>
+    <div class="hero-title-row">
+      <div class="hero-title">вся правда о похудении</div>
+      <div class="hero-sub">или почему жир всегда побеждает</div>
+    </div>
     <div class="hero-motivation">Помогу избавиться от лишнего веса без стресса и срывов — на реальных принципах, с поддержкой и подробным планом.</div>
     <div class="hero-case">Твои результаты — мой главный кейс.</div>
     <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>
@@ -443,6 +482,7 @@
     <img src="demo/photo_2024-07-06_09-03-37.jpg" alt="Владимир Иванов">
   </div>
 </section>
+
 
   <!-- ABOUT BLOCK -->
   <section class="about" id="about">

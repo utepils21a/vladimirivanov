@@ -215,7 +215,14 @@
     .about strong, .about b {
       color: #ff9000;
       font-weight: 800;
-      text-shadow: 0 2px 10px #ff900033, 0 0px 2px #ff900044;
+      text-shadow: none; /* убираем оранжевую подсветку */
+    }
+    .caption {
+      padding: 10px 8px 2px 8px;
+      font-size: 1em;
+      color: #ff9000;
+      font-weight: 700;
+      text-shadow: none; /* убираем оранжевую подсветку */
     }
     .about img {
       max-width: 100%;
@@ -259,13 +266,7 @@
       max-height: none;
       min-height: 0;
     }
-    .caption {
-      padding: 10px 8px 2px 8px;
-      font-size: 1em;
-      color: #ff9000;
-      font-weight: 700;
-      text-shadow: 0 2px 10px #ff900033, 0 0px 2px #ff900044;
-    }
+    /* GREEN CHECKLIST — теперь через SVG! */
     .green-check-list {
       list-style: none;
       padding-left: 0;
@@ -279,13 +280,17 @@
       font-size: 1.07em;
       line-height: 1.5;
     }
-    .green-check-list li::before {
-      content: "✔";
-      color: #18d672 !important;
-      font-size: 1.18em;
-      margin-right: 12px;
-      font-weight: bold;
-      margin-top: 2px;
+    .check-icon {
+      display: inline-block;
+      width: 1.35em;
+      margin-right: 10px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .check-icon svg {
+      display: block;
+      width: 1.3em;
+      height: 1.3em;
     }
     .cta-block {
       background: #2a1800;
@@ -315,9 +320,7 @@
       text-align: center;
     }
     @media (max-width: 700px) {
-      .desktop-tg {
-    display: none !important;
-  }
+      .desktop-tg { display: none !important; }
       .header {
         flex-direction: column;
         align-items: center;
@@ -441,19 +444,6 @@
       font-size: 1.04em;
       letter-spacing: .5px;
     }
-    .green-check-list li::before {
-  content: "✔";
-  color: #18d672 !important;
-  font-size: 1.18em !important;
-  font-weight: bold !important;
-  margin-right: 12px !important;
-  margin-top: 2px;
-  text-shadow: 0 0 0 #18d672, 0 0 1px #18d672;
-  /* иногда помогает дополнительная обводка — имитируем цвет */
-  filter: brightness(1.1) drop-shadow(0 0 1px #18d672);
-  background: transparent !important;
-}
-
   </style>
 </head>
 <body>
@@ -549,16 +539,72 @@
     </ul>
     <p>Imagine how your life will change when the extra weight is gone.</p>
 
-    <!-- GREEN CHECKLIST HERE -->
+    <!-- GREEN CHECKLIST WITH SVG ICONS -->
     <ul class="green-check-list">
-      <li>You will wake up refreshed and sleep better.</li>
-      <li>Shortness of breath will disappear when walking and climbing stairs.</li>
-      <li>Blood pressure, sugar, and cholesterol levels will decrease.</li>
-      <li>Joint pain will go away, especially in your knees and back.</li>
-      <li>You will have more energy and strength throughout the day.</li>
-      <li>Your heart health and metabolic function will improve.</li>
-      <li>Your immune system will get stronger.</li>
-      <li>You’ll be able to wear your favorite clothes again.</li>
+      <li>
+        <span class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 16 16" fill="#18d672" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.003 11.803l-3.5-3.5.708-.708L6 10.386l6.646-6.647.708.708-7.354 7.356z"/>
+          </svg>
+        </span>
+        You will wake up refreshed and sleep better.
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 16 16" fill="#18d672" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.003 11.803l-3.5-3.5.708-.708L6 10.386l6.646-6.647.708.708-7.354 7.356z"/>
+          </svg>
+        </span>
+        Shortness of breath will disappear when walking and climbing stairs.
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 16 16" fill="#18d672" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.003 11.803l-3.5-3.5.708-.708L6 10.386l6.646-6.647.708.708-7.354 7.356z"/>
+          </svg>
+        </span>
+        Blood pressure, sugar, and cholesterol levels will decrease.
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 16 16" fill="#18d672" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.003 11.803l-3.5-3.5.708-.708L6 10.386l6.646-6.647.708.708-7.354 7.356z"/>
+          </svg>
+        </span>
+        Joint pain will go away, especially in your knees and back.
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 16 16" fill="#18d672" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.003 11.803l-3.5-3.5.708-.708L6 10.386l6.646-6.647.708.708-7.354 7.356z"/>
+          </svg>
+        </span>
+        You will have more energy and strength throughout the day.
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 16 16" fill="#18d672" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.003 11.803l-3.5-3.5.708-.708L6 10.386l6.646-6.647.708.708-7.354 7.356z"/>
+          </svg>
+        </span>
+        Your heart health and metabolic function will improve.
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 16 16" fill="#18d672" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.003 11.803l-3.5-3.5.708-.708L6 10.386l6.646-6.647.708.708-7.354 7.356z"/>
+          </svg>
+        </span>
+        Your immune system will get stronger.
+      </li>
+      <li>
+        <span class="check-icon">
+          <svg width="22" height="22" viewBox="0 0 16 16" fill="#18d672" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.003 11.803l-3.5-3.5.708-.708L6 10.386l6.646-6.647.708.708-7.354 7.356z"/>
+          </svg>
+        </span>
+        You’ll be able to wear your favorite clothes again.
+      </li>
     </ul>
   </section>
 

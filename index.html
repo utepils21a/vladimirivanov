@@ -441,6 +441,24 @@
       .hero-photo img { max-width:94vw;}
       .social-links { gap: 26px;}
     }
+    .lang-link {
+  color: #ffe1ba;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2.5px;
+  text-decoration-color: #ffe1ba;
+  transition: color .16s;
+  margin-left: 12px;
+  margin-right: 4px;
+  font-size: 1em;
+}
+.lang-link:hover {
+  color: #ff9000;
+  text-decoration-color: #ff9000;
+}
+
   </style>
 </head>
 <body>
@@ -460,6 +478,7 @@
     <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
     <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
     <a class="nav-link" href="/blog">Блог</a>
+     <a href="/en/" class="lang-link" title="English version">ENGLISH VERSION</a>
     <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link desktop-tg" title="Мой Telegram" rel="noopener">
       <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
     </a>

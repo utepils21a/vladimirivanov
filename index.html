@@ -133,12 +133,13 @@
       min-height: 340px;
     }
     .hero-content {
-      flex: 1 1 380px;
-      min-width: 320px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+  flex: 1 1 380px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
     .hero-header-flex {
       display: flex;
       flex-direction: row;
@@ -147,26 +148,23 @@
       margin-bottom: 2px;
       width: 100%;
     }
-    .hero-title {
-      font-size: clamp(2.2em, 5vw, 3.5em);
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1.08;
-      white-space: nowrap;
-      flex-shrink: 0;
-      margin-bottom: 0;
-    }
-    .hero-sub {
-      font-size: 1.13em;
-      color: #bbb;
-      font-weight: 400;
-      opacity: .95;
-      white-space: nowrap;
-      align-self: flex-end;
-      margin-bottom: 8px;
-      margin-left: 0;
-      margin-top: 0;
-    }
+   .hero-title {
+  font-size: clamp(2.2em, 5vw, 3.5em);
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1.08;
+  margin-bottom: 0;
+  text-shadow: 0 4px 20px #ff900028;
+}
+   .hero-sub {
+  font-size: 1.13em;
+  color: #bbb;
+  font-weight: 400;
+  opacity: .95;
+  align-self: flex-end;       /* <-- Ключ! */
+  margin-top: 4px;
+  margin-bottom: 26px;        /* Отступ вниз до остального текста */
+}
     .hero-content > .hero-header-flex + * {
       margin-top: 28px !important;
     }
@@ -434,19 +432,17 @@
 
   <!-- HERO -->
   <section class="hero-row">
-    <div class="hero-content">
-      <div class="hero-header-flex">
-        <div class="hero-title">вся правда о похудении</div>
-        <div class="hero-sub">или почему жир всегда побеждает</div>
-      </div>
-      <div class="hero-motivation">Помогу избавиться от лишнего веса без стресса и срывов — на реальных принципах, с поддержкой и подробным планом.</div>
-      <div class="hero-case">Твои результаты — мой главный кейс.</div>
-      <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>
-    </div>
-    <div class="hero-photo">
-      <img src="demo/photo_2024-07-06_09-03-37.jpg" alt="Владимир Иванов">
-    </div>
-  </section>
+  <div class="hero-content">
+    <div class="hero-title">вся правда о похудении</div>
+    <div class="hero-sub">или почему жир всегда побеждает</div>
+    <div class="hero-motivation">Помогу избавиться от лишнего веса без стресса и срывов — на реальных принципах, с поддержкой и подробным планом.</div>
+    <div class="hero-case">Твои результаты — мой главный кейс.</div>
+    <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>
+  </div>
+  <div class="hero-photo">
+    <img src="demo/photo_2024-07-06_09-03-37.jpg" alt="Владимир Иванов">
+  </div>
+</section>
 
   <!-- ABOUT BLOCK -->
   <section class="about" id="about">

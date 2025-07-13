@@ -458,6 +458,47 @@
   color: #ff9000;
   text-decoration-color: #ff9000;
 }
+.hero-header-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 36px;
+  margin-bottom: 6px;
+}
+
+.hero-title {
+  font-size: clamp(2.2em, 5vw, 3.5em);
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1.08;
+  text-shadow: 0 4px 20px #ff900028;
+  white-space: nowrap;
+}
+
+.hero-sub {
+  font-size: 1.13em;
+  color: #fff;
+  font-weight: 400;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  opacity: .84;
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  .hero-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-bottom: 6px;
+  }
+  .hero-title, .hero-sub {
+    white-space: normal;
+    padding-left: 0;
+    padding-bottom: 0;
+    text-align: left;
+  }
+}
 
   </style>
 </head>
@@ -493,8 +534,10 @@
   <!-- HERO BLOCK -->
   <section class="hero-row">
     <div class="hero-content">
-      <div class="hero-title">вся правда о похудении</div>
-      <div class="hero-sub">или почему жир всегда побеждает</div>
+      <div class="hero-header-flex">
+  <div class="hero-title">вся правда о похудении</div>
+  <div class="hero-sub">или почему жир всегда побеждает</div>
+</div>
       <div class="hero-motivation">Помогу избавиться от лишнего веса без стресса и срывов — на реальных принципах, с поддержкой и подробным планом.</div>
       <div class="hero-case">Твои результаты — мой главный кейс.</div>
       <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>

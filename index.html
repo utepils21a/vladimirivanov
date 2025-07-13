@@ -1,211 +1,540 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Секретные секреты быстрого похудения</title>
-
+  <title>Владимир Иванов — вся правда о похудении</title>
+  <meta name="description" content="Похудение без жёстких диет и изнурительных тренировок. Честно о похудении. Реальные советы, поддержка, бесплатная консультация.">
   <link rel="icon" href="logo.svg" type="image/svg+xml" />
-  
-  <!-- Подключаем шрифт Jura из Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --accent: #ff9000;
+      --bg: #111;
+      --bg-card: #181818;
+      --text: #fff;
+      --muted: #bbb;
+      --border: #222;
+      --telegram-blue: #229ED9;
+      --instagram-gradient: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%,#285AEB 90%);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 18px;
+      min-height: 100%;
+      scroll-behavior: smooth;
+    }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent); }
 
-               <style>
-  body {
-    font-family: "Roboto Condensed", sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    color: #222;
-    line-height: 1.6;
-  }
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 22px 28px 0 28px;
+    }
+    .logo-name {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+      min-width: 110px;
+      user-select: none;
+    }
+    .logo-name span {
+      color: #fff;
+      font-size: 1.55em;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.04;
+      letter-spacing: .7px;
+    }
+    .logo-name span:last-child {
+      margin-top: -2px;
+      font-size: 1.11em;
+      letter-spacing: 1.5px;
+    }
+    .nav {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1em;
+      letter-spacing: 0.05em;
+      transition: color .18s;
+      cursor: pointer;
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: none;
+      border: none;
+      font-family: inherit;
+      outline: none;
+      position: relative;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent);
+    }
+    .tg-icon-link {
+      margin-left: 32px;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      background: #229ED9;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      justify-content: center;
+      box-shadow: 0 3px 18px #229ED933;
+      transition: box-shadow 0.18s, transform 0.12s;
+    }
+    .tg-icon-link:hover {
+      box-shadow: 0 6px 22px #229ED966;
+      transform: translateY(-2px) scale(1.07);
+    }
+    .tg-icon-link img {
+      width: 28px; height: 28px;
+      display: block;
+    }
 
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
+    /* ОРАНЖЕВАЯ ЧЕРТА */
+    .orange-divider {
+      width: 100vw;
+      border-top: 2.5px solid var(--accent);
+      margin: 24px 0 0 0;
+      box-sizing: border-box;
+    }
 
-  .header {
-    text-align: center;
-    font-size: 1em;
-    font-weight: 400;
-    color: #888;
-    margin-bottom: 10px;
-  }
+    /* HERO */
+    .hero-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 54px 28px 24px 28px;
+      gap: 50px;
+      min-height: 340px;
+    }
+    .hero-content {
+      flex: 1 1 380px;
+      min-width: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-title {
+      font-size: clamp(2.2em, 5vw, 3.5em);
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1.08;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 20px #ff900028;
+    }
+    .hero-sub {
+      font-size: 1.13em;
+      color: #fff;
+      font-weight: 400;
+      margin-bottom: 22px;
+    }
+    .hero-motivation {
+      margin-bottom: 12px;
+      margin-top: 2px;
+      font-size: 1.28em;
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.25;
+      text-shadow: 0 4px 20px #ff900028;
+    }
+    .hero-case {
+      font-size: 1.05em;
+      color: #ffe1ba;
+      font-weight: 500;
+      margin-bottom: 28px;
+      opacity: .95;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #111;
+      font-weight: 800;
+      padding: 18px 44px;
+      border-radius: 15px;
+      text-decoration: none;
+      font-size: 1.16em;
+      box-shadow: 0 8px 32px rgba(255,144,0,0.14);
+      transition: background 0.18s, color 0.2s, transform 0.14s;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 12px;
+    }
+    .cta-btn:hover {
+      background: #ffc26b;
+      color: #111;
+      transform: translateY(-2px) scale(1.03);
+    }
+    .hero-photo {
+      flex: 0 0 330px;
+      max-width: 330px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-photo img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 22px;
+      object-fit: cover;
+      box-shadow: 0 8px 44px #0007, 0 2px 12px #ff900018;
+      background: #191919;
+    }
+    @media (max-width: 1000px) {
+      .hero-row { flex-direction: column-reverse; align-items:center; gap:32px; }
+      .hero-photo { max-width:230px; margin:0 auto;}
+      .hero-content { text-align:center; align-items:center; }
+    }
+    @media (max-width: 690px) {
+      .header, .hero-row {
+        max-width: 99vw;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .hero-content { min-width: unset;}
+      .nav { gap: 15px;}
+    }
+    @media (max-width: 480px) {
+      .hero-row { padding: 28px 0 8px 0;}
+      .hero-photo { max-width:160px;}
+      .cta-btn { font-size:1em;padding:10px 16px;}
+      .logo-name span { font-size: 1em;}
+    }
 
-  hr {
-    border: none;
-    border-top: 1px solid #eee;
-    margin: 20px 0 40px;
-  }
+    /* ABOUT */
+    .about {
+      max-width: 740px;
+      margin: 52px auto 38px auto;
+      background: var(--bg-card);
+      padding: 36px 26px 28px 26px;
+      border-radius: 20px;
+      box-shadow: 0 4px 32px #0003;
+      font-size: 1.09em;
+      line-height: 1.69;
+    }
+    .about h2 {
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.2em;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+    }
+    .about strong, .about b {
+      color: #ffc26b;
+      font-weight: 800;
+    }
+    .about ul {
+      margin-bottom: 22px;
+      padding-left: 20px;
+    }
+    .about li {
+      margin-bottom: 8px;
+      color: #e2e2e2;
+    }
+    .about img {
+      max-width: 100%;
+      margin: 18px 0;
+      border-radius: 10px;
+      box-shadow: 0 3px 18px #0004;
+    }
+    /* GALLERY */
+    .gallery-title {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 1.18em;
+      letter-spacing: 1.5px;
+      margin-top: 46px;
+      margin-bottom: 14px;
+      text-shadow: 0 3px 20px #ff900021;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 840px;
+      margin: 0 auto 18px auto;
+      padding: 0 12px;
+    }
+    .gallery-item {
+      background: var(--bg-card);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0002;
+      overflow: hidden;
+      text-align: center;
+      border: 1.5px solid var(--border);
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      border-radius: 12px 12px 0 0;
+      object-fit: cover;
+      min-height: 190px;
+      max-height: 260px;
+    }
+    .caption {
+      padding: 10px 8px 12px 8px;
+      font-size: .99em;
+      color: #ffa95e;
+      font-weight: 700;
+    }
 
-  h1 {
-    font-weight: 900;
-    font-size: clamp(2em, 6vw, 4em);
-    line-height: 1.1;
-    letter-spacing: -0.5px;
-    color: #111;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  h1 + p {
-    text-align: center;
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 30px;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    margin: 0px 0;
-    border-radius: 8px;
-  }
-
-  p {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-  }
-
-  ul {
-    margin-bottom: 30px;
-    padding-left: 20px;
-  }
-
-  ul li {
-    margin-bottom: 10px;
-    font-size: 1.05em;
-  }
-
-  .social-links {
-    margin-top: 40px;
-    text-align: center;
-  }
-
-  .social-links a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #1a0dab;
-    font-weight: 500;
-  }
-
-  .social-links a:hover {
-    text-decoration: underline;
-  }
-  .social-links {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.social-links a {
-  display: inline-block;
-  margin: 0 15px;
-  font-size: 1.2em;
-  color: #555;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #000;
-}
-
-.social-links i {
-  margin-right: 8px;
-  font-size: 1.4em;
-  vertical-align: middle;
-}
-
-</style>
-
+    /* CTA */
+    .cta-block {
+      background: #2a1800;
+      padding: 32px 0;
+      border-radius: 22px;
+      max-width: 700px;
+      margin: 44px auto 34px auto;
+      box-shadow: 0 4px 38px #ff900014;
+    }
+    .cta-block h2 {
+      color: var(--accent);
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      margin-top: 0;
+    }
+    .cta-block p {
+      margin-bottom: 19px;
+      font-size: 1.11em;
+      color: #fff8e2;
+    }
+    /* SOCIAL + FOOTER */
+    .social-links {
+      text-align: center;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+    .footer-telegram,
+    .footer-instagram {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      text-decoration: none;
+      box-shadow: 0 2px 18px #0003;
+      transition: box-shadow .16s, transform .11s;
+      font-size: 2em;
+      margin: 0 2px;
+      background: #fff;
+      border: none;
+      padding: 0;
+    }
+    .footer-telegram img, .footer-instagram img {
+      width: 32px;
+      height: 32px;
+      display: block;
+      border-radius: 50%;
+    }
+    .footer-telegram {
+      background: #229ED9;
+    }
+    .footer-telegram:hover {
+      box-shadow: 0 8px 32px #229ed955;
+      transform: translateY(-2px) scale(1.06);
+    }
+    .footer-instagram {
+      background: var(--instagram-gradient);
+    }
+    .footer-instagram:hover {
+      box-shadow: 0 8px 32px #fd594955;
+      transform: translateY(-2px) scale(1.06);
+    }
+    .footer {
+      text-align: center;
+      margin: 32px 0 16px 0;
+      color: #444;
+      font-size: 1.04em;
+      letter-spacing: .5px;
+    }
+    @media (max-width: 690px) {
+      .header, .hero-row {
+        max-width: 99vw;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .hero-content { min-width: unset;}
+      .nav { gap: 12px;}
+      .social-links { gap: 18px;}
+      .footer-telegram, .footer-instagram { width:38px;height:38px;}
+      .footer-telegram img, .footer-instagram img { width:22px;height:22px;}
+    }
+    @media (max-width: 480px) {
+      .hero-row { padding: 28px 0 8px 0;}
+      .hero-photo { max-width:160px;}
+      .cta-btn { font-size:1em;padding:10px 16px;}
+      .logo-name span { font-size: 1em;}
+      .footer-telegram, .footer-instagram { width:32px;height:32px;}
+      .footer-telegram img, .footer-instagram img { width:16px;height:16px;}
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-<div class="header">Grindstone blog</div>
-  <a href="/demo/index.html" target="_blank">Демо версия</a>   <!-- демо версия сайта -->
 
-  <hr />
+  <!-- HEADER -->
+  <div class="header">
+    <a href="/" class="logo-name">
+      <span>Владимир</span>
+      <span>Иванов</span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
+      <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
+      <a class="nav-link" href="/blog">Блог</a>
+      <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram">
+      </a>
+    </nav>
+  </div>
 
-  <h1>вся правда о похудении</h1>
-  <p style="text-align: center;">или почему жир всегда побеждает</p>
-  
+  <!-- ОРАНЖЕВАЯ ЧЕРТА -->
+  <div class="orange-divider"></div>
 
-  <img src="photo_2025-07-01_16-05-06.jpg" alt="Похудение" />  
-
-  
-    <p>Если ты сейчас ждёшь очередной "волшебный" способ похудеть за 7 дней к свадьбе бывшего, или хочешь сжечь жир, лежа в постели листая REELS — остановись!</p>
-
-<p>Вы не одни такие. Все мы попадались на удочку "планок до 7 пота" и "голодных марафонов".</p>
-
-<p>Я расскажу, как это работает на самом деле, <strong>без пыли в глаза и с гарантированным результатом</strong> — только, конечно, надо <strong>делать</strong>, а не надеяться.</p>
-
-<p>Все думают, что похудение — это изнурительные тренировки до полусмерти и диеты на одном огурце. <strong>Нет!</strong> Жир уходит <strong>не от 1000 бёрпи, а от дефицита калорий</strong>.</p>
-
-<p><strong>Ты должен тратить энергии больше — чем получаешь с едой. Всё, никакой магии.</strong></p>
-
-<p>Диета — это не "не есть", а <strong>рациональный подход</strong>: что ты будешь есть. Меньше жирного, больше углеводов и белка.</p>
-
-<p><strong>Почему мы жрём ночью и срываемся с диет?</strong><br>Нет, ты не слабовольный. <strong>У нас так работает мозг.</strong> Когда ты мучаешь себя тренировками или голодом, твоя психика включает режим защиты — и в итоге ты жрёшь, куришь и листаешь рилсы одновременно, потому что мозг требует компенсацию.</p>
-
-<p>Это называется <strong>REWERD SYSTEM</strong> — и она <strong>сильнее, чем твой список целей на год</strong>.</p>
-
-<p><strong>Не борись с собой.</strong> Настраивай свою систему так, чтобы получать удовольствие от новых привычек: силовые тренировки, вкусная и менее калорийная еда, ощущение контроля — <strong>это работает</strong>.</p>
-
-<p><strong>Силовые тренировки — лучший жиросжигатель, о котором ты не знал!</strong><br>Забудь про бег на дорожке, как способ похудеть. Это как кричать на холодильник, чтоб перестал кормить тебя ночью.</p>
-
-<p><strong>МЫШЦЫ — это эндокринный орган</strong>, который влияет на кучу аспектов здоровья:</p>
-
-<ul>
-  <li>Состояние опорно-двигательного аппарата</li>
-  <li>Расход энергии за счёт окисления жиров</li>
-  <li>Снижает риск диабета 2 степени и жировой болезни печени</li>
-  <li>Улучшает сердечно-сосудистую систему (80% смертей тут)</li>
-  <li>Увеличивает минеральную плотность костей</li>
-  <li>Повышает жёсткость и массу сухожилий</li>
-  <li>Снижает возрастные потери силы и мышечной массы</li>
-  <li>Уменьшает симптомы депрессии и тревоги, повышает качество сна и работоспособность</li>
-</ul>
-
-<p><strong>Что делать дальше? (если не хочется сорваться снова)</strong></p>
-
-<ul>
-  <li>Не усложняй. Ешь одно и то же. Считай примерное количество калорий (БЖУ) или ориентируйся на лёгкое чувство голода.</li>
-  <li>Будь честен с собой!</li>
-  <li>Думай на дистанции. Хочешь похудеть к отпуску? Окей. Но лучше — <strong>на всю жизнь</strong>. Без строгих диет, с едой, которую любишь.</li>
-  <li>Силовые тренировки 3–4 раза в неделю.</li>
-</ul>
-<p> Представь, как измениться твоя жизнь, когда из неё уйдут лишние килограммы </p>
-<img src="IMG_4824.jpeg" alt="коммент" />
-<img src="IMG_4826.jpeg" alt="Результат 1" />
-<p>Такие результаты получают мои подопечные — <strong>без строгих диет и изнурительных тренировок</strong>.</p>
-<img src="IMG_4825.jpeg" alt="Результат 1" />
-<img src="IMG_4822.jpeg" alt="Результат 2" />
-<img src="IMG_4823.jpeg" alt="Результат 3" />
-
-<p style="text-align: center;">
-  Пиши в директ, записывайся на подарочную консультацию, разберем твою ситуацию и подберем подробный план действий ⤵️
-</p>
-
-
-
-<div class="social-links">
-  <a href="https://t.me/grindstone_channel" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-telegram-plane"></i> Telegram
-  </a>
-  <a href="https://instagram.com/grindstone101" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-</div>
-
+  <!-- HERO BLOCK -->
+  <section class="hero-row">
+    <div class="hero-content">
+      <div class="hero-title">вся правда о похудении</div>
+      <div class="hero-sub">или почему жир всегда побеждает</div>
+      <div class="hero-motivation">Помогу избавиться от лишнего веса без стресса и срывов — на реальных принципах, с поддержкой и подробным планом.</div>
+      <div class="hero-case">Твои результаты — мой главный кейс.</div>
+      <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>
     </div>
+    <div class="hero-photo">
+      <!-- Поставь своё фото сюда -->
+        <img src="demo/photo_2024-07-06_09-03-37.jpg" alt="Владимир Иванов">
+      <img src="IMG_4824.jpeg" alt="Владимир Иванов">
+    </div>
+  </section>
 
-</body>
-</html>
+  <!-- ABOUT BLOCK (Твой текст) -->
+  <section class="about" id="about">
+    <p>
+      Если ты сейчас ждёшь очередной "волшебный" способ похудеть за 7 дней к свадьбе бывшего, или хочешь сжечь жир, лежа в постели листая REELS — остановись!
+    </p>
+    <p>
+      Вы не одни такие. Все мы попадались на удочку "планок до 7 пота" и "голодных марафонов".
+    </p>
+    <p>
+      Я расскажу, как это работает на самом деле, <strong>без пыли в глаза и с гарантированным результатом</strong> — только, конечно, надо <strong>делать</strong>, а не надеяться.
+    </p>
+    <p>
+      Все думают, что похудение — это изнурительные тренировки до полусмерти и диеты на одном огурце. <strong>Нет!</strong> Жир уходит <strong>не от 1000 бёрпи, а от дефицита калорий</strong>.
+    </p>
+    <p>
+      <strong>Ты должен тратить энергии больше — чем получаешь с едой. Всё, никакой магии.</strong>
+    </p>
+    <p>
+      Диета — это не "не есть", а <strong>рациональный подход</strong>: что ты будешь есть. Меньше жирного, больше углеводов и белка.
+    </p>
+    <p>
+      <strong>Почему мы жрём ночью и срываемся с диет?</strong><br>Нет, ты не слабовольный. <strong>У нас так работает мозг.</strong> Когда ты мучаешь себя тренировками или голодом, твоя психика включает режим защиты — и в итоге ты жрёшь, куришь и листаешь рилсы одновременно, потому что мозг требует компенсацию.
+    </p>
+    <p>
+      Это называется <strong>REWERD SYSTEM</strong> — и она <strong>сильнее, чем твой список целей на год</strong>.
+    </p>
+    <p>
+      <strong>Не борись с собой.</strong> Настраивай свою систему так, чтобы получать удовольствие от новых привычек: силовые тренировки, вкусная и менее калорийная еда, ощущение контроля — <strong>это работает</strong>.
+    </p>
+    <p>
+      <strong>Силовые тренировки — лучший жиросжигатель, о котором ты не знал!</strong><br>Забудь про бег на дорожке, как способ похудеть. Это как кричать на холодильник, чтоб перестал кормить тебя ночью.
+    </p>
+    <p>
+      <strong>МЫШЦЫ — это эндокринный орган</strong>, который влияет на кучу аспектов здоровья:
+    </p>
+    <ul>
+      <li>Состояние опорно-двигательного аппарата</li>
+      <li>Расход энергии за счёт окисления жиров</li>
+      <li>Снижает риск диабета 2 степени и жировой болезни печени</li>
+      <li>Улучшает сердечно-сосудистую систему (80% смертей тут)</li>
+      <li>Увеличивает минеральную плотность костей</li>
+      <li>Повышает жёсткость и массу сухожилий</li>
+      <li>Снижает возрастные потери силы и мышечной массы</li>
+      <li>Уменьшает симптомы депрессии и тревоги, повышает качество сна и работоспособность</li>
+    </ul>
+    <p><strong>Что делать дальше? (если не хочется сорваться снова)</strong></p>
+    <ul>
+      <li>Не усложняй. Ешь одно и то же. Считай примерное количество калорий (БЖУ) или ориентируйся на лёгкое чувство голода.</li>
+      <li>Будь честен с собой!</li>
+      <li>Думай на дистанции. Хочешь похудеть к отпуску? Окей. Но лучше — <strong>на всю жизнь</strong>. Без строгих диет, с едой, которую любишь.</li>
+      <li>Силовые тренировки 3–4 раза в неделю.</li>
+    </ul>
+    <p>Представь, как измениться твоя жизнь, когда из неё уйдут лишние килограммы</p>
+    <img src="IMG_4824.jpeg" alt="коммент" />
+  </section>
+
+  <!-- GALLERY BLOCK / ОТЗЫВЫ -->
+  <div class="gallery-title" id="gallery">Результаты и отзывы</div>
+  <section class="gallery">
+    <div class="gallery-item">
+      <img src="IMG_4826.jpeg" alt="Результат 1" />
+      <div class="caption">-13 кг за 4 месяца</div>
+    </div>
+    <div class="gallery-item">
+      <img src="IMG_4825.jpeg" alt="Результат 2" />
+      <div class="caption">-8 кг без диет</div>
+    </div>
+    <div class="gallery-item">
+      <img src="IMG_4822.jpeg" alt="Результат 3" />
+      <div class="caption">Реальный кейс</div>
+    </div>
+    <div class="gallery-item">
+      <img src="IMG_4823.jpeg" alt="Результат 4" />
+      <div class="caption">Результат подопечного</div>
+    </div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <section class="cta-block">
+    <div style="text-align:center;">
+      <h2>Пиши в директ</h2>
+      <p>
+        Записывайся на <b>подарочную консультацию</b>, разберем твою ситуацию и подберем подробный план действий.<br>
+        Места ограничены!
+      </p>
+      <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Записаться сейчас</a>
+    </div>
+  </section>
+
+  <!-- SOCIAL + FOOTER -->
+  <div class="social-links" id="contact">
+    <a href="https://t.me/grindstone_channel" target="_blank" rel="noopener" class="footer-telegram" title="Telegram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+    </a>
+    <a href="https://instagram.com/grindstone101" target="_blank" rel="noopener" class="footer-instagram" title="Instagram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    </a>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Владимир Иванов — Твой эксперт по похудению
+  </div>
 
 </body>
 </html>

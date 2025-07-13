@@ -462,8 +462,12 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  gap: 36px;
-  margin-bottom: 6px;
+  justify-content: flex-start;
+  gap: 18px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
 }
 
 .hero-title {
@@ -471,33 +475,35 @@
   font-weight: 900;
   color: var(--accent);
   line-height: 1.08;
-  text-shadow: 0 4px 20px #ff900028;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .hero-sub {
   font-size: 1.13em;
   color: #fff;
   font-weight: 400;
-  padding-bottom: 8px;
-  padding-left: 12px;
   opacity: .84;
   white-space: nowrap;
+  align-self: flex-end;
+  margin-bottom: 7px;
+  margin-left: auto;
+  /* прижимает к правому краю hero-content, но не за пределы фото */
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   .hero-header-flex {
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
   .hero-title, .hero-sub {
     white-space: normal;
-    padding-left: 0;
-    padding-bottom: 0;
+    margin-left: 0;
     text-align: left;
   }
+}
   </style>
 </head>
 <body>

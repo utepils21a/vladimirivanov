@@ -15,6 +15,7 @@
       --text: #fff;
       --muted: #bbb;
       --border: #222;
+      --beige: #ffe1ba;
     }
     html, body {
       margin: 0;
@@ -26,8 +27,6 @@
       min-height: 100%;
       scroll-behavior: smooth;
     }
-
-    /* HEADER desktop */
     .header {
       max-width: 1160px;
       margin: 0 auto;
@@ -37,7 +36,6 @@
       align-items: center;
       flex-direction: row;
       position: relative;
-      transition: all 0.22s;
     }
     .logo-name {
       display: flex;
@@ -100,25 +98,29 @@
       box-shadow: 0 8px 32px #ff900055;
       transform: translateY(-2px) scale(1.06);
     }
-
-    /* Мобильная версия: имя + Telegram по центру одной строкой */
-    .header-mobile-row {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      gap: 16px;
-      margin-bottom: 0;
+    .lang-link {
+      color: var(--beige);
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      text-decoration-thickness: 2.5px;
+      text-decoration-color: var(--beige);
+      transition: color .16s;
+      margin-left: 12px;
+      margin-right: 4px;
+      font-size: 1em;
     }
-
-    /* ОРАНЖЕВАЯ ЧЕРТА */
+    .lang-link:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
     .orange-divider {
       width: 100vw;
       border-top: 2.5px solid var(--accent);
       margin: 28px 0 0 0;
       box-sizing: border-box;
     }
-
     /* HERO */
     .hero-row {
       display: flex;
@@ -126,7 +128,7 @@
       align-items: stretch;
       max-width: 1160px;
       margin: 0 auto;
-      padding: 70px 28px 24px 28px; /* больше отступ сверху! */
+      padding: 70px 28px 24px 28px;
       gap: 50px;
       min-height: 340px;
     }
@@ -137,32 +139,47 @@
       flex-direction: column;
       justify-content: center;
     }
+    .hero-header-flex {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 18px;
+      margin-bottom: 2px;
+      width: 100%;
+    }
     .hero-title {
       font-size: clamp(2.2em, 5vw, 3.5em);
       font-weight: 900;
       color: var(--accent);
       line-height: 1.08;
-      margin-bottom: 12px;
-      text-shadow: 0 4px 20px #ff900028;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-bottom: 0;
     }
     .hero-sub {
       font-size: 1.13em;
-      color: #fff;
+      color: #bbb;
       font-weight: 400;
-      margin-bottom: 22px;
+      opacity: .95;
+      white-space: nowrap;
+      align-self: flex-end;
+      margin-bottom: 8px;
+      margin-left: 0;
+      margin-top: 0;
+    }
+    .hero-content > .hero-header-flex + * {
+      margin-top: 28px !important;
     }
     .hero-motivation {
       margin-bottom: 12px;
-      margin-top: 2px;
-      font-size: 1.28em;
+      font-size: 1.22em;
       color: #fff;
       font-weight: 700;
       line-height: 1.25;
-      text-shadow: 0 4px 20px #ff900028;
     }
     .hero-case {
       font-size: 1.05em;
-      color: #ffe1ba;
+      color: var(--beige);
       font-weight: 500;
       margin-bottom: 28px;
       opacity: .95;
@@ -206,8 +223,7 @@
       box-shadow: 0 8px 44px #0007, 0 2px 12px #ff900018;
       background: #191919;
     }
-
-    /* ABOUT и GALLERY — одинаковая светлая подложка */
+    /* ABOUT, GALLERY */
     .about,
     .gallery-item {
       background: var(--bg-card) !important;
@@ -223,17 +239,15 @@
       line-height: 1.69;
     }
     .about strong, .about b {
-  color: #ff9000;
-  font-weight: 800;
-}
+      color: var(--accent);
+      font-weight: 800;
+    }
     .about img {
       max-width: 100%;
       margin: 18px 0;
       border-radius: 10px;
       box-shadow: 0 3px 18px #0004;
     }
-
-    /* GALLERY */
     .gallery-title {
       text-align: center;
       color: var(--accent);
@@ -271,14 +285,12 @@
       min-height: 0;
     }
     .caption {
-  padding: 10px 8px 2px 8px;
-  font-size: 1em;
-  color: #ff9000;
-  font-weight: 700;
-  text-shadow: 0 2px 10px #ff900033, 0 0px 2px #ff900044; /* можно оставить для свечения */
-}
-
-
+      padding: 10px 8px 2px 8px;
+      font-size: 1em;
+      color: var(--accent);
+      font-weight: 700;
+      text-shadow: 0 2px 10px #ff900033, 0 0px 2px #ff900044;
+    }
     /* CTA */
     .cta-block {
       background: #2a1800;
@@ -296,29 +308,16 @@
       margin-top: 0;
     }
     .cta-block p {
-  margin-bottom: 19px;
-  font-size: 1.11em;
-  color: #fff8e2;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.65;
-  padding: 0 22px;
-  text-align: center;
-}
-
-@media (max-width: 700px) {
-  .cta-block p {
-    padding: 0 8vw;
-    font-size: 1.08em;
-    text-align: left;
-  }
-  .cta-block h2 {
-    padding-left: 8vw;
-    padding-right: 8vw;
-  }
-}
-
+      margin-bottom: 19px;
+      font-size: 1.11em;
+      color: #fff8e2;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.65;
+      padding: 0 22px;
+      text-align: center;
+    }
     /* SOCIAL + FOOTER */
     .social-links {
       text-align: center;
@@ -362,14 +361,27 @@
       font-size: 1.04em;
       letter-spacing: .5px;
     }
-
-    /* --- АДАПТИВ --- */
+    /* Адаптив */
+    @media (max-width: 950px) {
+      .hero-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+      .hero-title, .hero-sub {
+        white-space: normal;
+        margin-left: 0;
+        text-align: left;
+      }
+      .hero-content > .hero-header-flex + * {
+        margin-top: 16px !important;
+      }
+    }
     @media (max-width: 850px) {
       .hero-photo { max-width: 350px; }
       .hero-photo img { max-width: 350px; }
     }
     @media (max-width: 700px) {
-      /* Мобильная шапка! */
       .header {
         flex-direction: column;
         align-items: center;
@@ -381,31 +393,7 @@
         font-size: 1.08em;
         margin-bottom: 0;
         justify-content: center;
-        display: none; /* скрыть стандартную на мобилке */
-      }
-      .header-mobile-row { display: none; }
-@media (max-width: 700px) {
-  .header > .logo-name { display: none !important; }
-  .header-mobile-row { display: flex !important; }
-  .desktop-tg { display: none !important; }
-}
-      .header > .logo-name { display: none !important; }
-      .tg-icon-link {
-        margin-left: 0;
-        margin-top: 0;
-        width: 56px;
-        height: 56px;
-      }
-      .tg-icon-link img {
-        width: 44px;
-        height: 44px;
-      }
-      .nav {
-        flex-direction: row;
-        gap: 14px;
-        align-items: center;
-        justify-content: center;
-        margin-top: 12px;
+        display: none;
       }
       .hero-row { flex-direction: column-reverse; align-items:center; gap:32px; padding-top: 28px; }
       .hero-photo { max-width:98vw;}
@@ -414,18 +402,9 @@
       .gallery { grid-template-columns: 1fr 1fr; }
       .header { padding-left: 0; padding-right: 0;}
       .nav { flex-wrap: wrap; gap: 16px;}
-      /* КРУПНЫЕ СОЦ. ИКОНКИ ВНИЗУ */
-      .footer-telegram,
-      .footer-instagram {
-        width: 70px;
-        height: 70px;
-      }
-      .footer-telegram img,
-      .footer-instagram img {
-        width: 58px;
-        height: 58px;
-      }
-      .social-links { gap: 32px;}
+      .footer-telegram, .footer-instagram { width:70px; height:70px;}
+      .footer-telegram img, .footer-instagram img { width:54px;height:54px;}
+      .social-links { gap: 26px;}
     }
     @media (max-width: 600px) {
       .hero-row { gap: 18px; padding-top: 16px;}
@@ -434,167 +413,54 @@
       .tg-icon-link { width: 48px; height: 48px;}
       .tg-icon-link img { width: 34px; height: 34px;}
     }
-    @media (max-width: 470px) {
-      .footer-telegram, .footer-instagram { width:70px; height:70px;}
-      .footer-telegram img, .footer-instagram img { width:54px;height:54px;}
-      .hero-photo { max-width: 94vw;}
-      .hero-photo img { max-width:94vw;}
-      .social-links { gap: 26px;}
-    }
-    .lang-link {
-  color: #ffe1ba;
-  font-weight: 800;
-  letter-spacing: .05em;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-thickness: 2.5px;
-  text-decoration-color: #ffe1ba;
-  transition: color .16s;
-  margin-left: 12px;
-  margin-right: 4px;
-  font-size: 1em;
-}
-.lang-link:hover {
-  color: #ff9000;
-  text-decoration-color: #ff9000;
-}
-.hero-header-flex {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  gap: 14px;              /* Расстояние между строками */
-  margin-bottom: 6px;     /* Меньше расстояние после блока */
-  width: 100%;
-}
-
-.hero-title {
-  font-size: clamp(2.2em, 5vw, 3.5em);
-  font-weight: 900;
-  color: var(--accent);
-  line-height: 1.08;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-bottom: 0;
-}
-
-.hero-sub {
-  font-size: 1.13em;
-  color: #bbb;
-  font-weight: 400;
-  opacity: .95;
-  white-space: nowrap;
-  align-self: flex-end;
-  margin-bottom: 7px;
-  margin-left: 18px;
-  margin-top: 0;
-}
-
-/* Добавить чуть больше отступа после .hero-header-flex перед текстом */
-.hero-content > .hero-header-flex + * {
-  margin-top: 26px !important;
-}
-
-/* Мобильная версия — делаем строки вертикально */
-@media (max-width: 950px) {
-  .hero-header-flex {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-  }
-  .hero-title, .hero-sub {
-    white-space: normal;
-    margin-left: 0;
-    text-align: left;
-  }
-  .hero-content > .hero-header-flex + * {
-    margin-top: 20px !important;
-  }
-}
-
-
   </style>
 </head>
 <body>
-
   <!-- HEADER -->
   <div class="header">
-  <!-- Лого для десктопа -->
-  <a href="/" class="logo-name">Владимир Иванов</a>
-  <!-- Мобильная шапка: имя + Telegram одной строкой -->
-  <div class="header-mobile-row">
-    <span class="logo-name" style="display:flex;">Владимир Иванов</span>
-    <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
-      <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
-    </a>
+    <a href="/" class="logo-name">Владимир Иванов</a>
+    <nav class="nav">
+      <a class="nav-link" href="#">Форматы работы со мной</a>
+      <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
+      <a class="nav-link" href="#">Блог</a>
+      <a href="/en/" class="lang-link" title="English version">ENGLISH VERSION</a>
+      <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
+        <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
+      </a>
+    </nav>
   </div>
-  <nav class="nav">
-    <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
-    <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
-    <a class="nav-link" href="/blog">Блог</a>
-     <a href="/en/" class="lang-link" title="English version">ENGLISH VERSION</a>
-    <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link desktop-tg" title="Мой Telegram" rel="noopener">
-      <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
-    </a>
-  </nav>
-</div>
 
-
-
-  <!-- ОРАНЖЕВАЯ ЧЕРТА -->
   <div class="orange-divider"></div>
 
-  <!-- HERO BLOCK -->
- <section class="hero-row">
-  <div class="hero-content">
-    <div class="hero-header-flex">
-      <div class="hero-title">вся правда о похудении</div>
-      <div class="hero-sub">или почему жир всегда побеждает</div>
+  <!-- HERO -->
+  <section class="hero-row">
+    <div class="hero-content">
+      <div class="hero-header-flex">
+        <div class="hero-title">вся правда о похудении</div>
+        <div class="hero-sub">или почему жир всегда побеждает</div>
+      </div>
+      <div class="hero-motivation">Помогу избавиться от лишнего веса без стресса и срывов — на реальных принципах, с поддержкой и подробным планом.</div>
+      <div class="hero-case">Твои результаты — мой главный кейс.</div>
+      <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>
     </div>
-    <div class="hero-motivation">Помогу избавиться от лишнего веса ...</div>
-    <div class="hero-case">Твои результаты — мой главный кейс.</div>
-    <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>
-  </div>
-  <div class="hero-photo">
-    <img src="demo/photo_2024-07-06_09-03-37.jpg" alt="Владимир Иванов">
-  </div>
-</section>
-
+    <div class="hero-photo">
+      <img src="demo/photo_2024-07-06_09-03-37.jpg" alt="Владимир Иванов">
+    </div>
+  </section>
 
   <!-- ABOUT BLOCK -->
   <section class="about" id="about">
-    <p>
-      Если ты сейчас ждёшь очередной "волшебный" способ похудеть за 7 дней к свадьбе бывшего, или хочешь сжечь жир, лежа в постели листая REELS — остановись!
-    </p>
-    <p>
-      Вы не одни такие. Все мы попадались на удочку "планок до 7 пота" и "голодных марафонов".
-    </p>
-    <p>
-      Я расскажу, как это работает на самом деле, <strong>без пыли в глаза и с гарантированным результатом</strong> — только, конечно, надо <strong>делать</strong>, а не надеяться.
-    </p>
-    <p>
-      Все думают, что похудение — это изнурительные тренировки до полусмерти и диеты на одном огурце. <strong>Нет!</strong> Жир уходит <strong>не от 1000 бёрпи, а от дефицита калорий</strong>.
-    </p>
-    <p>
-      <strong>Ты должен тратить энергии больше — чем получаешь с едой. Всё, никакой магии.</strong>
-    </p>
-    <p>
-      Диета — это не "не есть", а <strong>рациональный подход</strong>: что ты будешь есть. Меньше жирного, больше углеводов и белка.
-    </p>
-    <p>
-      <strong>Почему мы жрём ночью и срываемся с диет?</strong><br>Нет, ты не слабовольный. <strong>У нас так работает мозг.</strong> Когда ты мучаешь себя тренировками или голодом, твоя психика включает режим защиты — и в итоге ты жрёшь, куришь и листаешь рилсы одновременно, потому что мозг требует компенсацию.
-    </p>
-    <p>
-      Это называется <strong>REWERD SYSTEM</strong> — и она <strong>сильнее, чем твой список целей на год</strong>.
-    </p>
-    <p>
-      <strong>Не борись с собой.</strong> Настраивай свою систему так, чтобы получать удовольствие от новых привычек: силовые тренировки, вкусная и менее калорийная еда, ощущение контроля — <strong>это работает</strong>.
-    </p>
-    <p>
-      <strong>Силовые тренировки — лучший жиросжигатель, о котором ты не знал!</strong><br>Забудь про бег на дорожке, как способ похудеть. Это как кричать на холодильник, чтоб перестал кормить тебя ночью.
-    </p>
-    <p>
-      <strong>МЫШЦЫ — это эндокринный орган</strong>, который влияет на кучу аспектов здоровья:
-    </p>
+    <p>Если ты сейчас ждёшь очередной "волшебный" способ похудеть за 7 дней к свадьбе бывшего, или хочешь сжечь жир, лежа в постели листая REELS — остановись!</p>
+    <p>Вы не одни такие. Все мы попадались на удочку "планок до 7 пота" и "голодных марафонов".</p>
+    <p>Я расскажу, как это работает на самом деле, <strong>без пыли в глаза и с гарантированным результатом</strong> — только, конечно, надо <strong>делать</strong>, а не надеяться.</p>
+    <p>Все думают, что похудение — это изнурительные тренировки до полусмерти и диеты на одном огурце. <strong>Нет!</strong> Жир уходит <strong>не от 1000 бёрпи, а от дефицита калорий</strong>.</p>
+    <p><strong>Ты должен тратить энергии больше — чем получаешь с едой. Всё, никакой магии.</strong></p>
+    <p>Диета — это не "не есть", а <strong>рациональный подход</strong>: что ты будешь есть. Меньше жирного, больше углеводов и белка.</p>
+    <p><strong>Почему мы жрём ночью и срываемся с диет?</strong><br>Нет, ты не слабовольный. <strong>У нас так работает мозг.</strong> Когда ты мучаешь себя тренировками или голодом, твоя психика включает режим защиты — и в итоге ты жрёшь, куришь и листаешь рилсы одновременно, потому что мозг требует компенсацию.</p>
+    <p>Это называется <strong>REWARD SYSTEM</strong> — и она <strong>сильнее, чем твой список целей на год</strong>.</p>
+    <p><strong>Не борись с собой.</strong> Настраивай свою систему так, чтобы получать удовольствие от новых привычек: силовые тренировки, вкусная и менее калорийная еда, ощущение контроля — <strong>это работает</strong>.</p>
+    <p><strong>Силовые тренировки — лучший жиросжигатель, о котором ты не знал!</strong><br>Забудь про бег на дорожке, как способ похудеть. Это как кричать на холодильник, чтоб перестал кормить тебя ночью.</p>
+    <p><strong>МЫШЦЫ — это эндокринный орган</strong>, который влияет на кучу аспектов здоровья:</p>
     <ul>
       <li>Состояние опорно-двигательного аппарата</li>
       <li>Расход энергии за счёт окисления жиров</li>
@@ -612,7 +478,7 @@
       <li>Думай на дистанции. Хочешь похудеть к отпуску? Окей. Но лучше — <strong>на всю жизнь</strong>. Без строгих диет, с едой, которую любишь.</li>
       <li>Силовые тренировки 3–4 раза в неделю.</li>
     </ul>
-    <p>Представь, как измениться твоя жизнь, когда из неё уйдут лишние килограммы</p>
+    <p>Представь, как изменится твоя жизнь, когда из неё уйдут лишние килограммы</p>
     <img src="IMG_4824.jpeg" alt="Результат 1" />
     <img src="IMG_4826.jpeg" alt="Результат 2" />
   </section>
@@ -621,7 +487,7 @@
   <div class="gallery-title" id="gallery">Результаты и отзывы</div>
   <section class="gallery">
     <div class="gallery-item">
-      <img src="demo/photo_2025-07-13_11-14-12.jpg" alt="Результат 3"> 
+      <img src="demo/photo_2025-07-13_11-14-12.jpg" alt="Результат 3">
       <div class="caption">-8 кг за 3 месяца</div>
       <div class="caption">Без ограничений по питанию, без кардио и интенсивных тренировок</div>
     </div>
@@ -644,16 +510,15 @@
 
   <!-- CTA BLOCK -->
   <section class="cta-block">
-  <div style="text-align:center;">
-    <h2>Пиши в директ</h2>
-    <p>
-      Записывайся на <b>подарочную консультацию</b>, разберем твою ситуацию и подберем подробный план действий.<br>
-      Места ограничены!
-    </p>
-    <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Записаться сейчас</a>
-  </div>
-</section>
-
+    <div style="text-align:center;">
+      <h2>Пиши в директ</h2>
+      <p>
+        Записывайся на <b>подарочную консультацию</b>, разберем твою ситуацию и подберем подробный план действий.<br>
+        Места ограничены!
+      </p>
+      <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Записаться сейчас</a>
+    </div>
+  </section>
 
   <!-- SOCIAL + FOOTER -->
   <div class="social-links" id="contact">
@@ -664,10 +529,8 @@
       <img src="demo/Instagram_logo_2022.svg" alt="Instagram">
     </a>
   </div>
-
   <div class="footer">
     &copy; 2025 Владимир Иванов — Твой эксперт по похудению
   </div>
-
 </body>
 </html>

@@ -428,24 +428,28 @@
 
   <!-- HEADER -->
   <div class="header">
-    <!-- Веб: имя и меню в строку, моб: только header-mobile-row видно -->
-    <a href="/" class="logo-name">Владимир Иванов</a>
-    <div class="header-mobile-row">
-      <a href="/" class="logo-name" style="display:flex;">Владимир Иванов</a>
-      <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
-        <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
-      </a>
-    </div>
-    <nav class="nav">
-      <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
-      <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
-      <a class="nav-link" href="/blog">Блог</a>
-      <!-- Только для веб: иконка Telegram справа в меню -->
-      <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link desktop-tg" title="Мой Telegram" rel="noopener">
-        <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
-      </a>
-    </nav>
+  <!-- Лого для десктопа -->
+  <a href="/" class="logo-name">Владимир Иванов</a>
+
+  <!-- Мобильная шапка: имя + Telegram одной строкой, только для мобилы -->
+  <div class="header-mobile-row">
+    <span class="logo-name" style="display:flex;">Владимир Иванов</span>
+    <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
+      <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
+    </a>
   </div>
+
+  <nav class="nav">
+    <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
+    <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
+    <a class="nav-link" href="/blog">Блог</a>
+    <!-- Иконка Telegram справа в меню (только на десктопе, через CSS) -->
+    <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link desktop-tg" title="Мой Telegram" rel="noopener">
+      <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
+    </a>
+  </nav>
+</div>
+
 
   <!-- ОРАНЖЕВАЯ ЧЕРТА -->
   <div class="orange-divider"></div>

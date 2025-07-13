@@ -29,16 +29,14 @@
 
     /* HEADER DESKTOP */
     .header {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 22px 28px 0 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      flex-direction: row;
-      transition: all 0.22s;
-    }
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 22px 28px 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; /* <-- главное! */
+}
     .logo-name {
       display: flex;
       flex-direction: column;
@@ -53,11 +51,11 @@
       margin: 0;
     }
     .nav {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
     .nav-link {
       color: var(--muted);
       text-decoration: none;
@@ -396,17 +394,18 @@
 <body>
 
   <!-- HEADER -->
-  <div class="header">
-    <a href="/" class="logo-name">Владимир Иванов</a>
+ <div class="header">
+  <a href="/" class="logo-name">Владимир Иванов</a>
+  <nav class="nav">
+    <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
+    <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
+    <a class="nav-link" href="/blog">Блог</a>
     <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
       <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
     </a>
-    <nav class="nav">
-      <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
-      <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
-      <a class="nav-link" href="/blog">Блог</a>
-    </nav>
-  </div>
+  </nav>
+</div>
+
 
   <!-- ОРАНЖЕВАЯ ЧЕРТА -->
   <div class="orange-divider"></div>

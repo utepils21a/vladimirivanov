@@ -11,7 +11,7 @@
     :root {
       --accent: #ff9000;
       --bg: #111;
-      --bg-card: #181818;
+      --bg-card: #333339;
       --text: #fff;
       --muted: #bbb;
       --border: #222;
@@ -27,65 +27,35 @@
       scroll-behavior: smooth;
     }
 
-    /* HEADER */
+    /* HEADER DESKTOP */
     .header {
       max-width: 1160px;
       margin: 0 auto;
       padding: 22px 28px 0 28px;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
       position: relative;
-    }
-    .header-top-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      width: 100%;
+      flex-direction: row;
+      transition: all 0.22s;
     }
     .logo-name {
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
       text-decoration: none;
       user-select: none;
-      font-size: 2em;
+      font-size: 1.55em;
       font-weight: 900;
       text-transform: uppercase;
       color: #fff;
       letter-spacing: .8px;
       margin: 0;
     }
-    .tg-icon-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      width: 52px;
-      height: 52px;
-      margin-left: 0;
-      background: transparent;
-      box-shadow: none;
-      border: none;
-      padding: 0;
-      transition: box-shadow 0.18s, transform 0.12s;
-    }
-    .tg-icon-link img {
-      width: 44px;
-      height: 44px;
-      display: block;
-    }
-    .tg-icon-link:hover {
-      box-shadow: 0 8px 32px #ff900055;
-      transform: translateY(-2px) scale(1.06);
-    }
     .nav {
       display: flex;
       gap: 32px;
       align-items: center;
-      justify-content: center;
-      margin-top: 18px;
       flex-wrap: wrap;
     }
     .nav-link {
@@ -106,6 +76,29 @@
     }
     .nav-link:hover, .nav-link.active {
       color: var(--accent);
+    }
+    .tg-icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      margin-left: 32px;
+      background: transparent;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      transition: box-shadow 0.18s, transform 0.12s;
+    }
+    .tg-icon-link img {
+      width: 44px;
+      height: 44px;
+      display: block;
+    }
+    .tg-icon-link:hover {
+      box-shadow: 0 8px 32px #ff900055;
+      transform: translateY(-2px) scale(1.06);
     }
 
     /* ОРАНЖЕВАЯ ЧЕРТА */
@@ -204,10 +197,13 @@
       background: #191919;
     }
 
-    /* ABOUT — светлая подложка */
+    /* ABOUT и GALLERY — одинаковая, ещё светлее */
+    .about,
+    .gallery-item {
+      background: var(--bg-card) !important;
+      color: #fffbe6;
+    }
     .about {
-      background: #262626 !important;
-      color: #f7f7f7;
       max-width: 740px;
       margin: 52px auto 38px auto;
       padding: 36px 26px 28px 26px;
@@ -247,12 +243,12 @@
       padding: 0 12px;
     }
     .gallery-item {
-      background: var(--bg-card);
       border-radius: 12px;
       box-shadow: 0 2px 12px #0002;
       overflow: hidden;
       text-align: center;
       border: 1.5px solid var(--border);
+      padding-bottom: 10px;
     }
     .gallery-item img {
       width: 100%;
@@ -265,8 +261,8 @@
       min-height: 0;
     }
     .caption {
-      padding: 10px 8px 12px 8px;
-      font-size: .99em;
+      padding: 10px 8px 2px 8px;
+      font-size: 1em;
       color: #ffa95e;
       font-weight: 700;
     }
@@ -299,7 +295,7 @@
       margin-bottom: 10px;
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 50px;
     }
     .footer-telegram,
     .footer-instagram {
@@ -307,8 +303,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      width: 54px;
-      height: 54px;
+      width: 60px;
+      height: 60px;
       text-decoration: none;
       box-shadow: 0 2px 18px #0003;
       transition: box-shadow .16s, transform .11s;
@@ -319,8 +315,8 @@
       padding: 0;
     }
     .footer-telegram img, .footer-instagram img {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       display: block;
       border-radius: 50%;
     }
@@ -329,12 +325,13 @@
       transform: translateY(-2px) scale(1.06);
     }
     .footer {
-      text-align: center;
-      margin: 32px 0 16px 0;
-      color: #444;
-      font-size: 1.04em;
-      letter-spacing: .5px;
-    }
+  text-align: center;
+  margin: 32px 0 16px 0;
+  color: #f5f5f5;   /* или даже #fff */
+  font-size: 1.04em;
+  letter-spacing: .5px;
+}
+
 
     /* --- АДАПТИВ --- */
     @media (max-width: 850px) {
@@ -342,27 +339,57 @@
       .hero-photo img { max-width: 350px; }
     }
     @media (max-width: 700px) {
+      /* МОБИЛЬНАЯ ШАПКА! */
+      .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 0 0 0;
+        gap: 0;
+      }
+      .logo-name {
+        flex-direction: row;
+        align-items: center;
+        font-size: 1.35em;
+        margin-bottom: 0;
+        justify-content: center;
+      }
+      .tg-icon-link {
+        margin-left: 12px;
+        margin-top: 0;
+        width: 48px;
+        height: 48px;
+      }
+      .tg-icon-link img { width: 36px; height: 36px; }
+      .nav {
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 12px;
+      }
       .hero-row { flex-direction: column-reverse; align-items:center; gap:32px; padding-top: 28px; }
       .hero-photo { max-width:98vw;}
       .hero-photo img { max-width:98vw;}
       .hero-content { text-align:center; align-items:center; }
       .gallery { grid-template-columns: 1fr 1fr; }
       .header { padding-left: 0; padding-right: 0;}
-      .nav { flex-wrap: wrap; gap: 18px;}
+      .nav { flex-wrap: wrap; gap: 16px;}
     }
     @media (max-width: 600px) {
-      .logo-name { font-size: 1.25em;}
-      .header-top-row { gap: 10px;}
+      .logo-name { font-size: 1.07em;}
       .hero-row { gap: 18px; padding-top: 16px;}
       .gallery { grid-template-columns: 1fr; }
-      .nav { gap: 12px;}
+      .nav { gap: 10px;}
+      .tg-icon-link { width: 44px; height: 44px;}
+      .tg-icon-link img { width: 30px; height: 30px;}
     }
     @media (max-width: 470px) {
-      .logo-name { font-size: 1em;}
-      .footer-telegram, .footer-instagram { width:38px; height:38px;}
-      .footer-telegram img, .footer-instagram img { width:28px;height:28px;}
+      .logo-name { font-size: 0.97em;}
+      .footer-telegram, .footer-instagram { width:54px; height:54px;}
+      .footer-telegram img, .footer-instagram img { width:40px;height:40px;}
       .hero-photo { max-width: 94vw;}
       .hero-photo img { max-width:94vw;}
+      .social-links { gap: 26px;}
     }
   </style>
 </head>
@@ -370,14 +397,10 @@
 
   <!-- HEADER -->
   <div class="header">
-    <div class="header-top-row">
-      <a href="/" class="logo-name">
-        Владимир Иванов
-      </a>
-      <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
-        <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
-      </a>
-    </div>
+    <a href="/" class="logo-name">Владимир Иванов</a>
+    <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
+      <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
+    </a>
     <nav class="nav">
       <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
       <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>

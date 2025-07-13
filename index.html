@@ -27,16 +27,18 @@
       scroll-behavior: smooth;
     }
 
-    /* HEADER DESKTOP */
+    /* HEADER desktop */
     .header {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 22px 28px 0 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row; /* <-- главное! */
-}
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 22px 28px 0 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      position: relative;
+      transition: all 0.22s;
+    }
     .logo-name {
       display: flex;
       flex-direction: column;
@@ -51,11 +53,11 @@
       margin: 0;
     }
     .nav {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  flex-wrap: wrap;
-}
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     .nav-link {
       color: var(--muted);
       text-decoration: none;
@@ -97,6 +99,16 @@
     .tg-icon-link:hover {
       box-shadow: 0 8px 32px #ff900055;
       transform: translateY(-2px) scale(1.06);
+    }
+
+    /* Мобильная версия: имя + Telegram по центру одной строкой */
+    .header-mobile-row {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 16px;
+      margin-bottom: 0;
     }
 
     /* ОРАНЖЕВАЯ ЧЕРТА */
@@ -195,7 +207,7 @@
       background: #191919;
     }
 
-    /* ABOUT и GALLERY — одинаковая, ещё светлее */
+    /* ABOUT и GALLERY — одинаковая светлая подложка */
     .about,
     .gallery-item {
       background: var(--bg-card) !important;
@@ -323,13 +335,12 @@
       transform: translateY(-2px) scale(1.06);
     }
     .footer {
-  text-align: center;
-  margin: 32px 0 16px 0;
-  color: #f5f5f5;   /* или даже #fff */
-  font-size: 1.04em;
-  letter-spacing: .5px;
-}
-
+      text-align: center;
+      margin: 32px 0 16px 0;
+      color: #f5f5f5;
+      font-size: 1.04em;
+      letter-spacing: .5px;
+    }
 
     /* --- АДАПТИВ --- */
     @media (max-width: 850px) {
@@ -337,30 +348,42 @@
       .hero-photo img { max-width: 350px; }
     }
     @media (max-width: 700px) {
-      /* МОБИЛЬНАЯ ШАПКА! */
+      /* Мобильная шапка! */
       .header {
         flex-direction: column;
         align-items: center;
         padding: 12px 0 0 0;
-        gap: 0;
       }
       .logo-name {
         flex-direction: row;
         align-items: center;
-        font-size: 1.35em;
+        font-size: 1.08em;
         margin-bottom: 0;
         justify-content: center;
+        display: none; /* скрыть стандартную на мобилке */
       }
+      .header-mobile-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 16px;
+        margin-bottom: 0;
+      }
+      .header > .logo-name { display: none !important; }
       .tg-icon-link {
-        margin-left: 12px;
+        margin-left: 0;
         margin-top: 0;
-        width: 48px;
-        height: 48px;
+        width: 56px;
+        height: 56px;
       }
-      .tg-icon-link img { width: 36px; height: 36px; }
+      .tg-icon-link img {
+        width: 44px;
+        height: 44px;
+      }
       .nav {
         flex-direction: row;
-        gap: 16px;
+        gap: 14px;
         align-items: center;
         justify-content: center;
         margin-top: 12px;
@@ -372,19 +395,29 @@
       .gallery { grid-template-columns: 1fr 1fr; }
       .header { padding-left: 0; padding-right: 0;}
       .nav { flex-wrap: wrap; gap: 16px;}
+      /* КРУПНЫЕ СОЦ. ИКОНКИ ВНИЗУ */
+      .footer-telegram,
+      .footer-instagram {
+        width: 70px;
+        height: 70px;
+      }
+      .footer-telegram img,
+      .footer-instagram img {
+        width: 58px;
+        height: 58px;
+      }
+      .social-links { gap: 32px;}
     }
     @media (max-width: 600px) {
-      .logo-name { font-size: 1.07em;}
       .hero-row { gap: 18px; padding-top: 16px;}
       .gallery { grid-template-columns: 1fr; }
       .nav { gap: 10px;}
-      .tg-icon-link { width: 44px; height: 44px;}
-      .tg-icon-link img { width: 30px; height: 30px;}
+      .tg-icon-link { width: 48px; height: 48px;}
+      .tg-icon-link img { width: 34px; height: 34px;}
     }
     @media (max-width: 470px) {
-      .logo-name { font-size: 0.97em;}
-      .footer-telegram, .footer-instagram { width:54px; height:54px;}
-      .footer-telegram img, .footer-instagram img { width:40px;height:40px;}
+      .footer-telegram, .footer-instagram { width:70px; height:70px;}
+      .footer-telegram img, .footer-instagram img { width:54px;height:54px;}
       .hero-photo { max-width: 94vw;}
       .hero-photo img { max-width:94vw;}
       .social-links { gap: 26px;}
@@ -394,18 +427,25 @@
 <body>
 
   <!-- HEADER -->
- <div class="header">
-  <a href="/" class="logo-name">Владимир Иванов</a>
-  <nav class="nav">
-    <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
-    <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
-    <a class="nav-link" href="/blog">Блог</a>
-    <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
-      <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
-    </a>
-  </nav>
-</div>
-
+  <div class="header">
+    <!-- Веб: имя и меню в строку, моб: только header-mobile-row видно -->
+    <a href="/" class="logo-name">Владимир Иванов</a>
+    <div class="header-mobile-row">
+      <a href="/" class="logo-name" style="display:flex;">Владимир Иванов</a>
+      <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
+        <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
+      </a>
+    </div>
+    <nav class="nav">
+      <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
+      <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
+      <a class="nav-link" href="/blog">Блог</a>
+      <!-- Только для веб: иконка Telegram справа в меню -->
+      <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link desktop-tg" title="Мой Telegram" rel="noopener">
+        <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
+      </a>
+    </nav>
+  </div>
 
   <!-- ОРАНЖЕВАЯ ЧЕРТА -->
   <div class="orange-divider"></div>

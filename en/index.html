@@ -441,6 +441,19 @@
       font-size: 1.04em;
       letter-spacing: .5px;
     }
+    .green-check-list li::before {
+  content: "✔";
+  color: #18d672 !important;
+  font-size: 1.18em !important;
+  font-weight: bold !important;
+  margin-right: 12px !important;
+  margin-top: 2px;
+  text-shadow: 0 0 0 #18d672, 0 0 1px #18d672;
+  /* иногда помогает дополнительная обводка — имитируем цвет */
+  filter: brightness(1.1) drop-shadow(0 0 1px #18d672);
+  background: transparent !important;
+}
+
   </style>
 </head>
 <body>

@@ -462,8 +462,8 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  gap: 18px;              /* Расстояние МЕЖДУ строками (уменьшить для компактности) */
-  margin-bottom: 0;       /* Убрать отступ после блока */
+  gap: 14px;              /* Расстояние между строками */
+  margin-bottom: 6px;     /* Меньше расстояние после блока */
   width: 100%;
 }
 
@@ -474,7 +474,7 @@
   line-height: 1.08;
   white-space: nowrap;
   flex-shrink: 0;
-  margin-bottom: 0;       /* Убрать лишний отступ снизу */
+  margin-bottom: 0;
 }
 
 .hero-sub {
@@ -484,21 +484,22 @@
   opacity: .95;
   white-space: nowrap;
   align-self: flex-end;
-  margin-bottom: 6px;    /* Выровнять по низу первой строки */
-  margin-left: 22px;     /* Можно увеличить/уменьшить для точности */
+  margin-bottom: 7px;
+  margin-left: 18px;
   margin-top: 0;
 }
 
-/* Добавь отступ ПЕРЕД следующим текстом (т.е. после hero-header-flex) */
+/* Добавить чуть больше отступа после .hero-header-flex перед текстом */
 .hero-content > .hero-header-flex + * {
-  margin-top: 32px !important; /* Сделает больше пространства между заголовками и текстом */
+  margin-top: 26px !important;
 }
 
+/* Мобильная версия — делаем строки вертикально */
 @media (max-width: 950px) {
   .hero-header-flex {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1px;
+    gap: 2px;
   }
   .hero-title, .hero-sub {
     white-space: normal;
@@ -506,9 +507,10 @@
     text-align: left;
   }
   .hero-content > .hero-header-flex + * {
-    margin-top: 22px !important;
+    margin-top: 20px !important;
   }
 }
+
 
   </style>
 </head>
@@ -542,20 +544,21 @@
   <div class="orange-divider"></div>
 
   <!-- HERO BLOCK -->
-  <section class="hero-row">
-    <div class="hero-content">
-      <div class="hero-header-flex">
-  <div class="hero-title">вся правда о похудении</div>
-  <div class="hero-sub">или почему жир всегда побеждает</div>
-</div>
-      <div class="hero-motivation">Помогу избавиться от лишнего веса без стресса и срывов — на реальных принципах, с поддержкой и подробным планом.</div>
-      <div class="hero-case">Твои результаты — мой главный кейс.</div>
-      <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>
+ <section class="hero-row">
+  <div class="hero-content">
+    <div class="hero-header-flex">
+      <div class="hero-title">вся правда о похудении</div>
+      <div class="hero-sub">или почему жир всегда побеждает</div>
     </div>
-    <div class="hero-photo">
-      <img src="demo/photo_2024-07-06_09-03-37.jpg" alt="Владимир Иванов">
-    </div>
-  </section>
+    <div class="hero-motivation">Помогу избавиться от лишнего веса ...</div>
+    <div class="hero-case">Твои результаты — мой главный кейс.</div>
+    <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>
+  </div>
+  <div class="hero-photo">
+    <img src="demo/photo_2024-07-06_09-03-37.jpg" alt="Владимир Иванов">
+  </div>
+</section>
+
 
   <!-- ABOUT BLOCK -->
   <section class="about" id="about">

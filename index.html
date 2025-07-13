@@ -29,39 +29,63 @@
 
     /* HEADER */
     .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       max-width: 1160px;
       margin: 0 auto;
       padding: 22px 28px 0 28px;
-      transition: all 0.22s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .header-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      width: 100%;
     }
     .logo-name {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
+      align-items: center;
       text-decoration: none;
-      min-width: 110px;
       user-select: none;
-    }
-    .logo-name span {
-      color: #fff;
-      font-size: 1.55em;
+      font-size: 2em;
       font-weight: 900;
       text-transform: uppercase;
-      line-height: 1.04;
-      letter-spacing: .7px;
+      color: #fff;
+      letter-spacing: .8px;
+      margin: 0;
     }
-    .logo-name span:last-child {
-      margin-top: -2px;
-      font-size: 1.11em;
-      letter-spacing: 1.5px;
+    .tg-icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      margin-left: 0;
+      background: transparent;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      transition: box-shadow 0.18s, transform 0.12s;
+    }
+    .tg-icon-link img {
+      width: 44px;
+      height: 44px;
+      display: block;
+    }
+    .tg-icon-link:hover {
+      box-shadow: 0 8px 32px #ff900055;
+      transform: translateY(-2px) scale(1.06);
     }
     .nav {
       display: flex;
-      gap: 34px;
+      gap: 32px;
       align-items: center;
+      justify-content: center;
+      margin-top: 18px;
       flex-wrap: wrap;
     }
     .nav-link {
@@ -83,31 +107,12 @@
     .nav-link:hover, .nav-link.active {
       color: var(--accent);
     }
-    .tg-icon-link {
-      margin-left: 32px;
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      justify-content: center;
-      transition: box-shadow 0.18s, transform 0.12s;
-      background: transparent;
-      box-shadow: none;
-      border: none;
-      padding: 0;
-    }
-    .tg-icon-link img {
-      width: 32px; height: 32px;
-      display: block;
-    }
 
     /* ОРАНЖЕВАЯ ЧЕРТА */
     .orange-divider {
       width: 100vw;
       border-top: 2.5px solid var(--accent);
-      margin: 24px 0 0 0;
+      margin: 28px 0 0 0;
       box-sizing: border-box;
     }
 
@@ -118,7 +123,7 @@
       align-items: stretch;
       max-width: 1160px;
       margin: 0 auto;
-      padding: 54px 28px 24px 28px;
+      padding: 70px 28px 24px 28px; /* больше отступ сверху! */
       gap: 50px;
       min-height: 340px;
     }
@@ -167,12 +172,13 @@
       padding: 18px 44px;
       border-radius: 15px;
       text-decoration: none;
-      font-size: 1.16em;
+      font-size: 1.28em;
       box-shadow: 0 8px 32px rgba(255,144,0,0.14);
       transition: background 0.18s, color 0.2s, transform 0.14s;
       border: none;
       cursor: pointer;
       margin-bottom: 12px;
+      margin-top: 6px;
     }
     .cta-btn:hover {
       background: #ffc26b;
@@ -180,8 +186,8 @@
       transform: translateY(-2px) scale(1.03);
     }
     .hero-photo {
-      flex: 0 0 400px;
-      max-width: 480px;
+      flex: 0 0 500px;
+      max-width: 500px;
       width: 100%;
       display: flex;
       align-items: center;
@@ -189,88 +195,13 @@
     }
     .hero-photo img {
       width: 100%;
-      max-width: 480px;
+      max-width: 500px;
       min-width: 180px;
       min-height: 220px;
-      border-radius: 20px;
+      border-radius: 22px;
       object-fit: cover;
       box-shadow: 0 8px 44px #0007, 0 2px 12px #ff900018;
       background: #191919;
-    }
-
-    /* --- АДАПТИВ --- */
-    @media (max-width: 1000px) {
-      .hero-row { flex-direction: column-reverse; align-items:center; gap:32px; }
-      .hero-photo { max-width:370px; }
-      .hero-content { text-align:center; align-items:center; }
-    }
-    @media (max-width: 750px) {
-      .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 12px 0 0 0;
-        gap: 8px;
-      }
-      .logo-name {
-        align-items: center;
-        margin-bottom: 8px;
-      }
-      .nav {
-        flex-direction: column;
-        gap: 8px;
-        align-items: center;
-      }
-      .tg-icon-link {
-        margin-left: 0;
-        margin-top: 8px;
-      }
-      .hero-row { padding: 22px 2vw 12px 2vw; }
-      .hero-photo { max-width: 99vw; }
-      .hero-photo img { max-width: 99vw; min-width: 60vw; }
-    }
-    @media (max-width: 650px) {
-      .hero-photo {
-        max-width: 98vw;
-        width: 100%;
-        justify-content: center;
-      }
-      .hero-photo img {
-        max-width: 98vw;
-        min-width: 60vw;
-        min-height: 180px;
-        border-radius: 18px;
-      }
-    }
-    @media (max-width: 550px) {
-      .cta-btn {
-        font-size: 1.25em;
-        padding: 22px 0;
-        width: 100%;
-        max-width: 340px;
-        margin: 0 auto 14px auto;
-        display: block;
-      }
-      .social-links {
-        gap: 18px;
-      }
-      .footer-telegram,
-      .footer-instagram {
-        width: 54px;
-        height: 54px;
-      }
-      .footer-telegram img,
-      .footer-instagram img {
-        width: 38px;
-        height: 38px;
-      }
-    }
-    @media (max-width: 480px) {
-      .hero-row { padding: 10px 0 2px 0;}
-      .hero-photo { max-width:98vw;}
-      .cta-btn { font-size:1.08em; }
-      .logo-name span { font-size: 1em;}
-      .footer-telegram, .footer-instagram { width:40px;height:40px;}
-      .footer-telegram img, .footer-instagram img { width:26px;height:26px;}
     }
 
     /* ABOUT — светлая подложка */
@@ -285,25 +216,9 @@
       font-size: 1.09em;
       line-height: 1.69;
     }
-    .about h2 {
-      color: var(--accent);
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 1.2em;
-      letter-spacing: 1.5px;
-      font-weight: 800;
-    }
     .about strong, .about b {
       color: #ffc26b;
       font-weight: 800;
-    }
-    .about ul {
-      margin-bottom: 22px;
-      padding-left: 20px;
-    }
-    .about li {
-      margin-bottom: 8px;
-      color: #e2e2e2;
     }
     .about img {
       max-width: 100%;
@@ -311,6 +226,7 @@
       border-radius: 10px;
       box-shadow: 0 3px 18px #0004;
     }
+
     /* GALLERY */
     .gallery-title {
       text-align: center;
@@ -383,7 +299,7 @@
       margin-bottom: 10px;
       display: flex;
       justify-content: center;
-      gap: 32px;
+      gap: 40px;
     }
     .footer-telegram,
     .footer-instagram {
@@ -391,8 +307,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       text-decoration: none;
       box-shadow: 0 2px 18px #0003;
       transition: box-shadow .16s, transform .11s;
@@ -403,8 +319,8 @@
       padding: 0;
     }
     .footer-telegram img, .footer-instagram img {
-      width: 32px;
-      height: 32px;
+      width: 44px;
+      height: 44px;
       display: block;
       border-radius: 50%;
     }
@@ -419,23 +335,53 @@
       font-size: 1.04em;
       letter-spacing: .5px;
     }
+
+    /* --- АДАПТИВ --- */
+    @media (max-width: 850px) {
+      .hero-photo { max-width: 350px; }
+      .hero-photo img { max-width: 350px; }
+    }
+    @media (max-width: 700px) {
+      .hero-row { flex-direction: column-reverse; align-items:center; gap:32px; padding-top: 28px; }
+      .hero-photo { max-width:98vw;}
+      .hero-photo img { max-width:98vw;}
+      .hero-content { text-align:center; align-items:center; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .header { padding-left: 0; padding-right: 0;}
+      .nav { flex-wrap: wrap; gap: 18px;}
+    }
+    @media (max-width: 600px) {
+      .logo-name { font-size: 1.25em;}
+      .header-top-row { gap: 10px;}
+      .hero-row { gap: 18px; padding-top: 16px;}
+      .gallery { grid-template-columns: 1fr; }
+      .nav { gap: 12px;}
+    }
+    @media (max-width: 470px) {
+      .logo-name { font-size: 1em;}
+      .footer-telegram, .footer-instagram { width:38px; height:38px;}
+      .footer-telegram img, .footer-instagram img { width:28px;height:28px;}
+      .hero-photo { max-width: 94vw;}
+      .hero-photo img { max-width:94vw;}
+    }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <div class="header">
-    <a href="/" class="logo-name">
-      <span>Владимир</span>
-      <span>Иванов</span>
-    </a>
+    <div class="header-top-row">
+      <a href="/" class="logo-name">
+        Владимир Иванов
+      </a>
+      <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
+        <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
+      </a>
+    </div>
     <nav class="nav">
       <a class="nav-link" href="https://ya.ru" target="_blank" rel="noopener">Форматы работы со мной</a>
       <button class="nav-link" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Отзывы</button>
       <a class="nav-link" href="/blog">Блог</a>
-      <a href="https://t.me/grindstone_channel" target="_blank" class="tg-icon-link" title="Мой Telegram" rel="noopener">
-        <img src="demo/Telegram_2019_Logo.svg" alt="Telegram" width="32" height="32">
-      </a>
     </nav>
   </div>
 
@@ -452,12 +398,11 @@
       <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Получить бесплатную консультацию</a>
     </div>
     <div class="hero-photo">
-      <!-- Поставь своё фото сюда -->
       <img src="demo/photo_2024-07-06_09-03-37.jpg" alt="Владимир Иванов">
     </div>
   </section>
 
-  <!-- ABOUT BLOCK (Твой текст) -->
+  <!-- ABOUT BLOCK -->
   <section class="about" id="about">
     <p>
       Если ты сейчас ждёшь очередной "волшебный" способ похудеть за 7 дней к свадьбе бывшего, или хочешь сжечь жир, лежа в постели листая REELS — остановись!
@@ -554,10 +499,10 @@
   <!-- SOCIAL + FOOTER -->
   <div class="social-links" id="contact">
     <a href="https://t.me/grindstone_channel" target="_blank" rel="noopener" class="footer-telegram" title="Telegram">
-      <img src="demo/Telegram_2019_Logo.svg" alt="Telegram" width="32" height="32">
+      <img src="demo/Telegram_2019_Logo.svg" alt="Telegram">
     </a>
     <a href="https://instagram.com/grindstone101" target="_blank" rel="noopener" class="footer-instagram" title="Instagram">
-      <img src="demo/Instagram_logo_2022.svg" alt="Instagram" width="32" height="32">
+      <img src="demo/Instagram_logo_2022.svg" alt="Instagram">
     </a>
   </div>
 

@@ -271,11 +271,13 @@
       min-height: 0;
     }
     .caption {
-      padding: 10px 8px 2px 8px;
-      font-size: 1em;
-      color: #ffa95e;
-      font-weight: 700;
-    }
+  padding: 10px 8px 2px 8px;
+  font-size: 1em;
+  color: #ff9000;
+  font-weight: 700;
+  text-shadow: 0 2px 10px #ff900033, 0 0px 2px #ff900044; /* можно оставить для свечения */
+}
+
 
     /* CTA */
     .cta-block {
@@ -294,10 +296,29 @@
       margin-top: 0;
     }
     .cta-block p {
-      margin-bottom: 19px;
-      font-size: 1.11em;
-      color: #fff8e2;
-    }
+  margin-bottom: 19px;
+  font-size: 1.11em;
+  color: #fff8e2;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+  padding: 0 22px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .cta-block p {
+    padding: 0 8vw;
+    font-size: 1.08em;
+    text-align: left;
+  }
+  .cta-block h2 {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
+
     /* SOCIAL + FOOTER */
     .social-links {
       text-align: center;
@@ -548,15 +569,16 @@
 
   <!-- CTA BLOCK -->
   <section class="cta-block">
-    <div style="text-align:center;">
-      <h2>Пиши в директ</h2>
-      <p>
-        Записывайся на <b>подарочную консультацию</b>, разберем твою ситуацию и подберем подробный план действий.<br>
-        Места ограничены!
-      </p>
-      <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Записаться сейчас</a>
-    </div>
-  </section>
+  <div style="text-align:center;">
+    <h2>Пиши в директ</h2>
+    <p>
+      Записывайся на <b>подарочную консультацию</b>, разберем твою ситуацию и подберем подробный план действий.<br>
+      Места ограничены!
+    </p>
+    <a href="https://t.me/grindstone_channel" target="_blank" class="cta-btn">Записаться сейчас</a>
+  </div>
+</section>
+
 
   <!-- SOCIAL + FOOTER -->
   <div class="social-links" id="contact">

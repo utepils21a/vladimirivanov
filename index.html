@@ -603,6 +603,7 @@
     margin:0 0 20px 0;
     text-shadow:0 3px 22px #fff3;
   ">
+    Получите бесплатную консультацию
   </h2>
   <form
     action="https://docs.google.com/forms/d/e/1FAIpQLSdmMon-aLn7gPxZZS7B6sq2w7vSIRS-z4F8Yj70BsYC1CLvVw/formResponse"
@@ -651,8 +652,9 @@
     >
     <button
       type="submit"
+      id="consult-btn"
       style="
-        background:#fff;
+        background:#111;
         color:#ff9000;
         font-weight:900;
         padding:17px 0;
@@ -664,12 +666,34 @@
         box-shadow:0 2px 18px #ff900048;
         letter-spacing:0.7px;
         transition:.16s;
+        outline:none;
       "
-      onmouseover="this.style.background='#222';this.style.color='#ffe5b0'"
-      onmouseout="this.style.background='#fff';this.style.color='#ff9000'"
     >Получить бесплатную консультацию</button>
   </form>
 </div>
+<script>
+  // Делаем подсветку кнопки на hover и нажатие
+  const btn = document.getElementById('consult-btn');
+  if(btn){
+    btn.onmouseover = function(){
+      btn.style.background = '#ff9000';
+      btn.style.color = '#fff';
+    };
+    btn.onmouseout = function(){
+      btn.style.background = '#111';
+      btn.style.color = '#ff9000';
+    };
+    btn.onmousedown = function(){
+      btn.style.background = '#ffc26b';
+      btn.style.color = '#111';
+    };
+    btn.onmouseup = function(){
+      btn.style.background = '#ff9000';
+      btn.style.color = '#fff';
+    };
+  }
+</script>
+
 
     </div>
     <div class="hero-photo">

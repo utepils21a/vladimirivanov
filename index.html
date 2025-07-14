@@ -583,7 +583,7 @@
       </div>
       <div class="hero-motivation">Помогу избавиться от лишнего веса без стресса и срывов — на реальных принципах, с поддержкой и подробным планом.</div>
       <div class="hero-case">Твои результаты — мой главный кейс.</div>
-      <div style="
+    <div style="
   max-width:410px;
   margin:28px auto;
   padding:32px 24px 28px 24px;
@@ -664,31 +664,31 @@
         margin-top:8px;
         box-shadow:0 2px 18px #ff900048;
         letter-spacing:0.7px;
-        transition:.16s;
+        transition:box-shadow .15s, transform .15s;
         outline:none;
+        width:100%;
       "
     >Получить бесплатную консультацию</button>
   </form>
 </div>
 <script>
-  // Делаем подсветку кнопки на hover и нажатие
   const btn = document.getElementById('consult-btn');
   if(btn){
     btn.onmouseover = function(){
-      btn.style.background = '#ff9000';
-      btn.style.color = '#fff';
+      btn.style.boxShadow = '0 6px 24px #ff900077, 0 2px 18px #ff900048';
+      btn.style.transform = 'scale(1.04)';
     };
     btn.onmouseout = function(){
-      btn.style.background = '#111';
-      btn.style.color = '#ff9000';
+      btn.style.boxShadow = '0 2px 18px #ff900048';
+      btn.style.transform = 'scale(1)';
     };
     btn.onmousedown = function(){
-      btn.style.background = '#ffc26b';
-      btn.style.color = '#111';
+      btn.style.boxShadow = '0 2px 12px #ff900077';
+      btn.style.transform = 'scale(0.97)';
     };
     btn.onmouseup = function(){
-      btn.style.background = '#ff9000';
-      btn.style.color = '#fff';
+      btn.style.boxShadow = '0 6px 24px #ff900077, 0 2px 18px #ff900048';
+      btn.style.transform = 'scale(1.04)';
     };
   }
 </script>
